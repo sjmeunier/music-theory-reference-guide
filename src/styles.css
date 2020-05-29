@@ -12,14 +12,14 @@ a {
 
 .header {
 	color: #55eaea;
-	flex-shrink: 0;
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
 	background-color: #5353ff;
 	z-index: 1000;
 	width: 100%;
-	height: 100px;
+    height: 100px;
+    position: fixed;
 	border-bottom: 1px solid #002222;
 
 }
@@ -40,12 +40,66 @@ a {
     display: inline-block;
     background-color: #5353ff;
     border-right: 1px solid #002222;
-    margin-top: -1;
+    position: fixed;
+    top: 100px;
+    z-index: 1000;
+    min-height: 100%;
 }
 
 .content {
-    margin-left: 100px;
+    width: 100%;
+    padding-left: 200px;
+    margin: 100px auto 0px auto;
     display: inline-block;
-    padding: 10px;
+    text-align: center;
 
+}
+
+.content .container {
+    width: 600px;
+}
+
+.content .container h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.content ul.buttonlist {
+    border-radius: 8px;
+    border: 1px solid #999;
+    padding: 0px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.content ul.buttonlist.roots {
+    width: 80px;
+}
+
+.content ul.buttonlist.scales {
+    width: 200px;
+}
+
+.content ul.buttonlist li:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.content ul.buttonlist li {
+    display: block;
+    cursor: pointer;
+    background-color: #eee;
+    margin: 0px;
+    border-bottom: 1px solid #999;
+    padding: 2px 5px;
+}
+
+.content ul.buttonlist li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.content ul.buttonlist li.selected {
+    background-color: #333399;
+    color: #fff;
 }

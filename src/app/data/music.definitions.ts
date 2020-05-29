@@ -1,6 +1,6 @@
 import { Note } from './';
 
-export abstract class NoteDefinitions {
+export abstract class MusicDefinitions {
     public static notes: { [id: string]: Note; } = {
         "c/0": { name: "C", octave: 0, frequency: 16.35 },
         "c#/0": { name: "C#", octave: 0, frequency: 17.32 },
@@ -160,6 +160,6 @@ export abstract class NoteDefinitions {
     public static scales: { [id: string]: string[]; } = {
         'major':  ['c/4', 'd/4', 'e/4', 'f/4', 'g/4', 'a/4', 'b/4', 'c/5'],
             
-        'minor':  ['c/4', 'd/4', 'eb/4', 'f/4', 'g/4', 'ab/4', 'bb/4', 'c/5'],
+        'aeolian':  ['c/4', 'd/4', 'eb/4', 'f/4', 'g/4', 'ab/4', 'bb/4', 'c/5'],
     }
 }

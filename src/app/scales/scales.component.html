@@ -1,3 +1,11 @@
-<p>scales works!</p>
-<div id="scaleMusic"></div>
-<button (click)="play()">Play</button>
+<div class="container">
+    <h2>Scales</h2>
+    <div id="scaleMusic"></div>
+    <button (click)="play()">Play</button>
+    <ul class="buttonlist roots">
+        <li *ngFor="let item of rootNoteList" [ngClass]="{'selected': item.key === scaleRoot}" (click)="selectRoot(item.key)">{{item.value}}</li>
+    </ul>
+    <ul class="buttonlist scales">
+        <li *ngFor="let item of scaleList" [ngClass]="{'selected': item.key === scaleType}" (click)="selectScale(item.key)">{{item.value}}</li>
+    </ul>
+</div>
