@@ -27,7 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js.timbre.js"
+              "node_modules/vexflow/releases/vexflow-min.js"
             ]
           },
           "configurations": {

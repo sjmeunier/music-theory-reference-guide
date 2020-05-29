@@ -4,14 +4,14 @@
 <div class="main">
   <div class="navbar">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Scales</a></li>
-      <li><a href="#">Chords</a></li>
-      <li><a href="#">Instrument Ranges</a></li>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/scales">Scales</a></li>
+      <li><a routerLink="/chords">Chords</a></li>
+      <li><a routerLink="/instrument-ranges">Instrument Ranges</a></li>
     </ul>
   </div>
   <div class="content">
-  Hello world
+    <router-outlet></router-outlet>
   </div>
 </div>
 <div class="footer">
