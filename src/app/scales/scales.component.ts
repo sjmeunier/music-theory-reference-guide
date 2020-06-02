@@ -42,14 +42,14 @@ export class ScalesComponent implements OnInit {
   ];
 
   public rootAccidentalList = [
-    { key: 'b', value: 'b' },
-    { key: '', value: 'Natural' },
-    { key: '#', value: '#' }
+    { key: 'b', value: '\u266D' },
+    { key: '', value: '\u266E' },
+    { key: '#', value: '\u266F' }
   ];
 
 
   public scaleList = [
-    { key: 'major', value: 'Major' },
+    { key: 'major', value: 'Major (Ionian)' },
     { key: 'aeolian', value: 'Natural Minor (Aeolian)' },
     { key: 'harmonicminor', value: 'Harmonic Minor' },
     { key: 'melodicminor', value: 'Melodic Minor' },
@@ -58,7 +58,12 @@ export class ScalesComponent implements OnInit {
     { key: 'lydian', value: 'Lydian' },
     { key: 'mixolydian', value: 'Mixolydian' },
     { key: 'locrian', value: 'Locrian' },
-    { key: 'pentatonic', value: 'Pentatonic' }
+    { key: 'major-pentatonic', value: 'Major Pentatonic' },
+    { key: 'minor-pentatonic', value: 'Minor Pentatonic' },
+    { key: 'suspended-pentatonic', value: 'Suspended Pentatonic' },
+    { key: 'blues-major-pentatonic', value: 'Blues Major Pentatonic' },
+    { key: 'blues-minor-pentatonic', value: 'Blues Minor Pentatonic' }
+    
   ];
 
   ngOnInit(): void {
@@ -75,18 +80,22 @@ export class ScalesComponent implements OnInit {
     this.renderScale();
   }
 
+  private prettifyNoteName(noteName: string): string {
+    noteName = noteName.replace('bb', '\uD834\uDD2B');
+    noteName = noteName.replace('##', '\uD834\uDD2A');
+    noteName = noteName.replace('b', '\u266D');
+    noteName = noteName.replace('#', '\u266F');
+    return noteName;
+  }
   public prepareScale() {
     this.selectedScale = MusicDefinitions.scales[this.scaleType];
-
     this.vexFlowNotes = [];
 		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-      var noteId = this.baseNoteId + this.selectedScale.intervals[i];
-
       var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot][i].name;
       var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot][i].octave);
 
 			var vexFlowNote = new Vex.Flow.StaveNote({clef: 'treble', keys: [vexFlowKey], duration: 'h' })
-			  .addModifier(0, new Vex.Flow.Annotation(noteName)
+			  .addModifier(0, new Vex.Flow.Annotation(this.prettifyNoteName(noteName))
 				  .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
               
       if (noteName.length > 1) {
@@ -95,7 +104,7 @@ export class ScalesComponent implements OnInit {
 			this.vexFlowNotes.push(vexFlowNote);
     }
 
-    this.musicRenderer.resize(40 + (45 * this.selectedScale.intervals.length), 120);
+    this.musicRenderer.resize(40 + (45 * this.vexFlowNotes.length), 120);
   }
   public renderScale() {
 
@@ -108,12 +117,12 @@ export class ScalesComponent implements OnInit {
 
     this.contextGroup = context.openGroup();
 
-		var stave = new Vex.Flow.Stave(10, 0, 20 + (45 * this.selectedScale.intervals.length));
+		var stave = new Vex.Flow.Stave(10, 0, 20 + (45 * this.vexFlowNotes.length));
 		stave.addClef("treble");
 		stave.setContext(context).draw();
 
     if (this.vexFlowNotes.length > 0) {
-      var voice = new Vex.Flow.Voice({num_beats: 4,  beat_value: 1});
+      var voice = new Vex.Flow.Voice({num_beats: this.vexFlowNotes.length,  beat_value: 2});
       voice.addTickables(this.vexFlowNotes);
 
       var formatter = new Vex.Flow.Formatter().joinVoices([voice]).format([voice], 45 * this.selectedScale.intervals.length);
