@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicDefinitions } from '../data/music.definitions';
-import { Note } from '../data/note.interface';
+import { PlayableNote } from '../data/playable-note.interface';
 import { Scale } from '../data/scale.interface';
-
 declare var Vex: any;
 
 @Component({
@@ -93,6 +92,7 @@ export class ScalesComponent implements OnInit {
     this.musicRenderer = new Vex.Flow.Renderer(div, Vex.Flow.Renderer.Backends.SVG);
     this.scaleClef = 'treble';
     this.scaleRootBase = 'C';
+    this.showKeySignature = false;
     this.scaleRootAccidental = '';
     this.setScaleRoot();
     this.scaleType = 'major';
@@ -111,21 +111,21 @@ export class ScalesComponent implements OnInit {
     this.selectedScale = MusicDefinitions.scales[this.scaleType];
     this.vexFlowNotes = [];
 		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-      var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot][i].name;
+      var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot].notes[i].name;
 
-      var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot][i].octave);
+      var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot].notes[i].octave);
 
 			var vexFlowNote = new Vex.Flow.StaveNote({clef: this.scaleClef, keys: [vexFlowKey], duration: 'h' })
 			  .addModifier(0, new Vex.Flow.Annotation(this.prettifyNoteName(noteName))
 				  .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
               
-      if (this.showKeySignature === false && noteName.length > 1) {
+      if ((this.showKeySignature === false  || this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length == 0) && noteName.length > 1) {
         vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental(noteName.substring(1)));
       }
 			this.vexFlowNotes.push(vexFlowNote);
     }
 
-    this.musicRenderer.resize(40 + (45 * this.vexFlowNotes.length), 120);
+    this.musicRenderer.resize(130 + (45 * this.vexFlowNotes.length), 120);
   }
   public renderScale() {
 
@@ -138,8 +138,11 @@ export class ScalesComponent implements OnInit {
 
     this.contextGroup = context.openGroup();
 
-		var stave = new Vex.Flow.Stave(10, 0, 20 + (45 * this.vexFlowNotes.length));
-		stave.addClef(this.scaleClef);
+		var stave = new Vex.Flow.Stave(10, 0, 110 + (45 * this.vexFlowNotes.length));
+    stave.addClef(this.scaleClef);
+    if (this.showKeySignature === true && this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length > 0) {
+      stave.addKeySignature(this.selectedScale.scaleNotes[this.scaleRoot].keySignature);
+    }
 		stave.setContext(context).draw();
 
     if (this.vexFlowNotes.length > 0) {
@@ -160,7 +163,7 @@ export class ScalesComponent implements OnInit {
 		}
 	}
 			
-	private playNote(note: Note, index: number) {
+	private playNote(note: PlayableNote, index: number) {
 		var self = this;
 		var startTime = index * (this.noteDuration + this.noteInterval);
 		const silentOscillator = this.audioContext.createOscillator();
@@ -247,6 +250,7 @@ export class ScalesComponent implements OnInit {
 
     this.noteId = this.noteId + (this.scaleOctave * 12);
   }
+
 
   public selectRootBase(scaleRootBase: string) {
     this.scaleRootBase = scaleRootBase;

@@ -1,4 +1,4 @@
-export interface Note {
+export interface PlayableNote {
     name: string;
     frequency: number;
     octave: number;
