@@ -3,7 +3,10 @@
     <div id="scaleMusic"></div>
     <button (click)="play()">Play</button>
     <ul class="buttonlist roots">
-        <li *ngFor="let item of rootNoteList" [ngClass]="{'selected': item.key === scaleRoot}" (click)="selectRoot(item.key)">{{item.value}}</li>
+        <li *ngFor="let item of rootBaseNoteList" [ngClass]="{'selected': item.key === scaleRootBase}" (click)="selectRootBase(item.key)">{{item.value}}</li>
+    </ul>
+    <ul class="buttonlist accidentals">
+        <li *ngFor="let item of rootAccidentalList" [ngClass]="{'selected': item.key === scaleRootAccidental}" (click)="selectRootAccidental(item.key)">{{item.value}}</li>
     </ul>
     <ul class="buttonlist scales">
         <li *ngFor="let item of scaleList" [ngClass]="{'selected': item.key === scaleType}" (click)="selectScale(item.key)">{{item.value}}</li>

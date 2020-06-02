@@ -13,7 +13,9 @@ declare var Vex: any;
 export class ScalesComponent implements OnInit {
 
   constructor() { }
-  public scaleRoot: number;
+  public scaleRootBase: string;
+  public scaleRootAccidental: string;
+  public scaleRoot: string;
   public scaleType: string;
   public scaleOctave: number;
 
@@ -29,20 +31,22 @@ export class ScalesComponent implements OnInit {
 
   private audioContext: any;
 
-  public rootNoteList = [
-    { key: 0, value: 'C' },
-    { key: 1, value: 'C#/Db' },
-    { key: 2, value: 'D' },
-    { key: 3, value: 'D#/Eb' },
-    { key: 4, value: 'E' },
-    { key: 5, value: 'F' },
-    { key: 6, value: 'F#/Gb' },
-    { key: 7, value: 'G' },
-    { key: 8, value: 'G#/Ab' },
-    { key: 9, value: 'A' },
-    { key: 10, value: 'A#/Bb' },
-    { key: 11, value: 'B' }
+  public rootBaseNoteList = [
+    { key: 'C', value: 'C' },
+    { key: 'D', value: 'D' },
+    { key: 'E', value: 'E' },
+    { key: 'F', value: 'F' },
+    { key: 'G', value: 'G' },
+    { key: 'A', value: 'A' },
+    { key: 'B', value: 'B' }
   ];
+
+  public rootAccidentalList = [
+    { key: 'b', value: 'b' },
+    { key: '', value: 'Natural' },
+    { key: '#', value: '#' }
+  ];
+
 
   public scaleList = [
     { key: 'major', value: 'Major' },
@@ -62,8 +66,10 @@ export class ScalesComponent implements OnInit {
     var div = document.getElementById("scaleMusic")
 
     this.musicRenderer = new Vex.Flow.Renderer(div, Vex.Flow.Renderer.Backends.SVG);
-    this.scaleRoot = 0;
     this.scaleOctave = 4;
+    this.scaleRootBase = 'C';
+    this.scaleRootAccidental = '';
+    this.setScaleRoot();
     this.scaleType = 'major';
     this.prepareScale();
     this.renderScale();
@@ -73,34 +79,18 @@ export class ScalesComponent implements OnInit {
     this.selectedScale = MusicDefinitions.scales[this.scaleType];
 
     this.vexFlowNotes = [];
-    this.baseNoteId = this.scaleRoot + (this.scaleOctave * 12);
 		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
       var noteId = this.baseNoteId + this.selectedScale.intervals[i];
 
-      var noteName: string;
-      var vexFlowKey: string;
-      if (MusicDefinitions.notes[noteId].name.includes('/')) {
-        if (this.selectedScale.isFlatForRootIndex[this.scaleRoot] === true) {
-          noteName = MusicDefinitions.notes[noteId].name.substring(3);
-        } else {
-          noteName = MusicDefinitions.notes[noteId].name.substring(0, 2);
-        }
-      } else {
-        noteName = MusicDefinitions.notes[noteId].name;
-      }
-
-      var vexFlowKey: string = noteName + '/' + (noteId / 12);
+      var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot][i].name;
+      var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot][i].octave);
 
 			var vexFlowNote = new Vex.Flow.StaveNote({clef: 'treble', keys: [vexFlowKey], duration: 'h' })
 			  .addModifier(0, new Vex.Flow.Annotation(noteName)
 				  .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
               
-      if (MusicDefinitions.notes[noteId].name.includes('/')) {
-        if (this.selectedScale.isFlatForRootIndex[this.scaleRoot] === true) {
-          vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental('b'));
-        } else {
-          vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental('#'));
-        }
+      if (noteName.length > 1) {
+        vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental(noteName.substring(1)));
       }
 			this.vexFlowNotes.push(vexFlowNote);
     }
@@ -165,10 +155,71 @@ export class ScalesComponent implements OnInit {
 	private setNoteStyle = function (vexFlowNoteIndex: number, color: string) {
 		this.vexFlowNotes[vexFlowNoteIndex].setStyle({fillStyle: color, strokeStyle: color});
     this.renderScale();
-	}
+  }
+  
+  private setScaleRoot()
+  {
+    this.scaleRoot = this.scaleRootBase + this.scaleRootAccidental;
+    switch(this.scaleRoot) {
+      case 'C':
+      case 'B#':
+        this.baseNoteId = 0;
+        break;
+      case 'C#':
+      case 'Db':
+        this.baseNoteId = 1;
+        break;      
+      case 'D':
+        this.baseNoteId = 2;
+        break;      
+      case 'D#':
+      case 'Eb':
+        this.baseNoteId = 3;
+        break;      
+      case 'E':
+      case 'Fb':
+        this.baseNoteId = 4;
+        break;      
+      case 'E#':
+      case 'F':
+        this.baseNoteId = 5;
+        break;      
+      case 'F#':
+      case 'Gb':
+        this.baseNoteId = 6;
+        break;      
+      case 'G':
+        this.baseNoteId = 7;
+        break;      
+      case 'G#':
+      case 'Ab':
+        this.baseNoteId = 8;
+        break;      
+      case 'A':
+        this.baseNoteId = 9;
+        break;      
+      case 'A#':
+      case 'Bb':
+        this.baseNoteId = 10;
+        break;      
+      case 'B':
+      case 'Cb':
+        this.baseNoteId = 11;
+        break;      
+    }
+    this.baseNoteId = this.baseNoteId + (this.scaleOctave * 12);
+  }
 
-  public selectRoot(scaleRoot: number) {
-    this.scaleRoot = scaleRoot;
+  public selectRootBase(scaleRootBase: string) {
+    this.scaleRootBase = scaleRootBase;
+    this.setScaleRoot();
+    this.prepareScale();
+    this.renderScale();
+  }
+
+  public selectRootAccidental(scaleRootAccidental: string) {
+    this.scaleRootAccidental = scaleRootAccidental;
+    this.setScaleRoot();
     this.prepareScale();
     this.renderScale();
   }
