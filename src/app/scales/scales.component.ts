@@ -17,11 +17,14 @@ export class ScalesComponent implements OnInit {
   public scaleRootAccidental: string;
   public scaleRoot: string;
   public scaleType: string;
+  public scaleClef: string;
   public scaleOctave: number;
+  public showKeySignature: boolean;
 
   private selectedScale: Scale;
   private baseNoteId: number;
-
+  private noteId: number;
+  
   private musicRenderer: any; 
   private contextGroup: any = null;
   private vexFlowNotes: any[];
@@ -47,6 +50,10 @@ export class ScalesComponent implements OnInit {
     { key: '#', value: '\u266F' }
   ];
 
+  public keySignatureList = [
+    { key: true, value: 'Show key sig' },
+    { key: false, value: 'Don\'t show key sig' }
+  ];
 
   public scaleList = [
     { key: 'major', value: 'Major (Ionian)' },
@@ -62,16 +69,29 @@ export class ScalesComponent implements OnInit {
     { key: 'minor-pentatonic', value: 'Minor Pentatonic' },
     { key: 'suspended-pentatonic', value: 'Suspended Pentatonic' },
     { key: 'blues-major-pentatonic', value: 'Blues Major Pentatonic' },
-    { key: 'blues-minor-pentatonic', value: 'Blues Minor Pentatonic' }
-    
+    { key: 'blues-minor-pentatonic', value: 'Blues Minor Pentatonic' }    
   ];
+
+  public clefList = [
+    { key: 'treble', value: 'Treble' },
+    { key: 'bass', value: 'Bass' },
+    { key: 'alto', value: 'Alto' },
+    { key: 'tenor', value: 'Tenor' },
+    { key: 'soprano', value: 'Soprano' },
+    { key: 'mezzo-soprano', value: 'Mezzo-soprano' },
+    { key: 'baritone-c', value: 'Baritone C' },
+    { key: 'baritone-f', value: 'Baritone F' },
+    { key: 'subbass', value: 'Subbass' },
+    { key: 'french', value: 'French' }  
+  ];
+
 
   ngOnInit(): void {
 
     var div = document.getElementById("scaleMusic")
 
     this.musicRenderer = new Vex.Flow.Renderer(div, Vex.Flow.Renderer.Backends.SVG);
-    this.scaleOctave = 4;
+    this.scaleClef = 'treble';
     this.scaleRootBase = 'C';
     this.scaleRootAccidental = '';
     this.setScaleRoot();
@@ -92,13 +112,14 @@ export class ScalesComponent implements OnInit {
     this.vexFlowNotes = [];
 		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
       var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot][i].name;
+
       var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot][i].octave);
 
-			var vexFlowNote = new Vex.Flow.StaveNote({clef: 'treble', keys: [vexFlowKey], duration: 'h' })
+			var vexFlowNote = new Vex.Flow.StaveNote({clef: this.scaleClef, keys: [vexFlowKey], duration: 'h' })
 			  .addModifier(0, new Vex.Flow.Annotation(this.prettifyNoteName(noteName))
 				  .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
               
-      if (noteName.length > 1) {
+      if (this.showKeySignature === false && noteName.length > 1) {
         vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental(noteName.substring(1)));
       }
 			this.vexFlowNotes.push(vexFlowNote);
@@ -118,7 +139,7 @@ export class ScalesComponent implements OnInit {
     this.contextGroup = context.openGroup();
 
 		var stave = new Vex.Flow.Stave(10, 0, 20 + (45 * this.vexFlowNotes.length));
-		stave.addClef("treble");
+		stave.addClef(this.scaleClef);
 		stave.setContext(context).draw();
 
     if (this.vexFlowNotes.length > 0) {
@@ -135,7 +156,7 @@ export class ScalesComponent implements OnInit {
   public play() {
 		this.audioContext = new (window['AudioContext'] || window['webkitAudioContext'])();
 		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-			this.playNote(MusicDefinitions.notes[this.baseNoteId + this.selectedScale.intervals[i]], i);
+			this.playNote(MusicDefinitions.notes[this.noteId + this.selectedScale.intervals[i]], i);
 		}
 	}
 			
@@ -216,7 +237,15 @@ export class ScalesComponent implements OnInit {
         this.baseNoteId = 11;
         break;      
     }
-    this.baseNoteId = this.baseNoteId + (this.scaleOctave * 12);
+    this.noteId = this.baseNoteId;
+
+    this.scaleOctave = MusicDefinitions.clefs[this.scaleClef].baseOctave;
+    //Adjust base note so that notes on clef display nicely irrespective of key
+    if (this.baseNoteId < MusicDefinitions.clefs[this.scaleClef].baseNote) {
+      this.scaleOctave = this.scaleOctave + 1;
+    }
+
+    this.noteId = this.noteId + (this.scaleOctave * 12);
   }
 
   public selectRootBase(scaleRootBase: string) {
@@ -233,8 +262,21 @@ export class ScalesComponent implements OnInit {
     this.renderScale();
   }
 
+  public selectClef(scaleClef: string) {
+    this.scaleClef = scaleClef;
+    this.setScaleRoot();
+    this.prepareScale();
+    this.renderScale();
+  }
+
   public selectScale(scaleType: string) {
     this.scaleType = scaleType;
+    this.prepareScale();
+    this.renderScale();
+  }
+
+  public selectKeySignature(showKeySignature: boolean) {
+    this.showKeySignature = showKeySignature;
     this.prepareScale();
     this.renderScale();
   }

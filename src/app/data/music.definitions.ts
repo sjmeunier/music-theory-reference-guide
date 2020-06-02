@@ -1,4 +1,4 @@
-import { Note, Scale} from './';
+import { Note, Scale, Clef} from './';
 
 export abstract class MusicDefinitions {
     public static notes: Note[] = [
@@ -115,6 +115,7 @@ export abstract class MusicDefinitions {
     public static scales: { [id: string]: Scale; } = {
         'major':  {
             name: 'Major',
+            alternateNames: 'Ionian',
             intervals: [0, 2, 4, 5, 7, 9, 11, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }],
@@ -142,6 +143,7 @@ export abstract class MusicDefinitions {
         },
         'dorian':  {
             name: 'Dorian',
+            alternateNames: '',
             intervals: [0, 2, 3, 5, 7, 9, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -170,6 +172,7 @@ export abstract class MusicDefinitions {
 
          'phrygian':  {
             name: 'Phrygian',
+            alternateNames: '',
             intervals: [0, 1, 3, 5, 7, 8, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -198,6 +201,7 @@ export abstract class MusicDefinitions {
 
         'lydian':  {
             name: 'Lydian',
+            alternateNames: '',
             intervals: [0, 2, 4, 6, 7, 9, 11, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }],
@@ -226,6 +230,7 @@ export abstract class MusicDefinitions {
 
         'mixolydian':  {
             name: 'Mixolydian',
+            alternateNames: '',
             intervals: [0, 2, 4, 5, 7, 9, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -253,7 +258,8 @@ export abstract class MusicDefinitions {
         },
 
         'aeolian':  {
-            name: 'Natural Minor (Aeolian)',
+            name: 'Natural Minor',
+            alternateNames: 'Aeolian',
             intervals: [0, 2, 3, 5, 7, 8, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -282,6 +288,7 @@ export abstract class MusicDefinitions {
 
         'locrian':  {
             name: 'Locrian',
+            alternateNames: '',
             intervals: [0, 1, 3, 5, 6, 8, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -310,6 +317,7 @@ export abstract class MusicDefinitions {
 
         'major-pentatonic':  {
             name: 'Major Pentatonic',
+            alternateNames: '',
             intervals: [0, 2, 4, 7, 9, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }],
@@ -337,7 +345,8 @@ export abstract class MusicDefinitions {
         },
 
         'suspended-pentatonic':  {
-            name: 'Dorian',
+            name: 'Suspended Pentatonic',
+            alternateNames: 'Egyptian',
             intervals: [0, 2, 5, 7, 10, 12],
             scaleNotes: {
                 'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
@@ -362,6 +371,107 @@ export abstract class MusicDefinitions {
                 'B#': [ { name: 'B#', octave: 0 }, { name: 'C##', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'F##', octave: 1 }, { name: 'A#', octave: 1 }, { name: 'B#', octave: 1 }],
                 'Cb': [ { name: 'Cb', octave: 0 }, { name: 'Db', octave: 0 },  { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }]
             }
-         },
+        },
+        
+        'blues-minor-pentatonic':  {
+            name: 'Blues Minor',
+            alternateNames: 'Man Gong',
+            intervals: [0, 3, 5, 8, 10, 12],
+            scaleNotes: {
+                'C': [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
+                'C#': [ { name: 'C#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }],
+                'Db': [ { name: 'Db', octave: 0 }, { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 },{ name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }],
+                'D': [ { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }],
+                'D#': [ { name: 'D#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }],
+                'Eb': [ { name: 'Eb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }],
+                'E': [ { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }],
+                'E#': [ { name: 'E#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }],
+                'Fb': [ { name: 'Fb', octave: 0 }, { name: 'Abb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Dbb', octave: 1 }, { name: 'Ebb', octave: 1 }, { name: 'Fb', octave: 1 }],
+                'F': [ { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }],
+                'F#': [ { name: 'F#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 }],
+                'Gb': [ { name: 'Gb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Ebb', octave: 1 }, { name: 'Fb', octave: 1 }, { name: 'Gb', octave: 1 }],
+                'G': [ { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }, { name: 'G', octave: 1 }],
+                'G#': [ { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 }, { name: 'G#', octave: 1 }],
+                'Ab': [ { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Fb', octave: 1 }, { name: 'Gb', octave: 1 }, { name: 'Ab', octave: 1 }],
+                'A': [ { name: 'A', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'F', octave: 1 }, { name: 'G', octave: 1 }, { name: 'A', octave: 1 }],
+                'A#': [ { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'F#', octave: 1 }, { name: 'G#', octave: 1 }, { name: 'A#', octave: 1 }],
+                'Bb': [ { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'Gb', octave: 1 }, { name: 'Ab', octave: 1 }, { name: 'Bb', octave: 1 }],
+                'B': [ { name: 'B', octave: 0 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'G', octave: 1 }, { name: 'A', octave: 1 }, { name: 'B', octave: 1 }],
+                'B#': [ { name: 'B#', octave: 0 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'G#', octave: 1 }, { name: 'A#', octave: 1 }, { name: 'B#', octave: 1 }],
+                'Cb': [ { name: 'Cb', octave: 0 }, { name: 'Ebb', octave: 0 }, { name: 'Fb', octave: 0 }, { name: 'Abb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }]
+            }
+        },
+
+        'blues-major-pentatonic':  {
+            name: 'Blues Major',
+            alternateNames: 'Ritsusen',
+            intervals: [0, 2, 5, 7, 9, 12],
+            scaleNotes: {
+                'C': [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }],
+                'C#': [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }],
+                'Db': [ { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }],
+                'D': [ { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'D', octave: 1 }],
+                'D#': [ { name: 'D#', octave: 0 }, { name: 'E#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'D#', octave: 1 }],
+                'Eb': [ { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Eb', octave: 1 }],
+                'E': [ { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'E', octave: 1 }],
+                'E#': [ { name: 'E#', octave: 0 }, { name: 'F##', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'C##', octave: 1 }, { name: 'E#', octave: 1 }],
+                'Fb': [ { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Fb', octave: 1 }],
+                'F': [ { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'F', octave: 1 }],
+                'F#': [ { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'F#', octave: 1 }],
+                'Gb': [ { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'Gb', octave: 1 }],
+                'G': [ { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'G', octave: 1 }],
+                'G#': [ { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'G#', octave: 1 }],
+                'Ab': [ { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }, { name: 'Ab', octave: 1 }],
+                'A': [ { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 },  { name: 'A', octave: 1 }],
+                'A#': [ { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'F##', octave: 1 }, { name: 'A#', octave: 1 }],
+                'Bb': [ { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }, { name: 'G', octave: 1 }, { name: 'Bb', octave: 1 }],
+                'B': [ { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 }, { name: 'G#', octave: 1 }, { name: 'B', octave: 1 }],
+                'B#': [ { name: 'B#', octave: 0 }, { name: 'C##', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'F##', octave: 1 }, { name: 'G##', octave: 1 }, { name: 'B#', octave: 1 }],
+                'Cb': [ { name: 'Cb', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }]
+            }
+        },
+
+        'minor-pentatonic':  {
+            name: 'Minor Pentatonic',
+            alternateNames: '',
+            intervals: [0, 3, 5, 7, 10, 12],
+            scaleNotes: {
+                'C': [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }],
+                'C#': [ { name: 'C#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }],
+                'Db': [ { name: 'Db', octave: 0 }, { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }],
+                'D': [ { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }],
+                'D#': [ { name: 'D#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }],
+                'Eb': [ { name: 'Eb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }],
+                'E': [ { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }],
+                'E#': [ { name: 'E#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }],
+                'Fb': [ { name: 'Fb', octave: 0 }, { name: 'Abb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Ebb', octave: 1 }, { name: 'Fb', octave: 1 }],
+                'F': [ { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }],
+                'F#': [ { name: 'F#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 }],
+                'Gb': [ { name: 'Gb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Fb', octave: 1 }, { name: 'Gb', octave: 1 }],
+                'G': [ { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'F', octave: 1 }, { name: 'G', octave: 1 }],
+                'G#': [ { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'F#', octave: 1 }, { name: 'G#', octave: 1 }],
+                'Ab': [ { name: 'Ab', octave: 0 }, { name: 'Cb', octave: 1 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'Gb', octave: 1 }, { name: 'Ab', octave: 1 }],
+                'A': [ { name: 'A', octave: 0 }, { name: 'C', octave: 1 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'G', octave: 1 }, { name: 'A', octave: 1 }],
+                'A#': [ { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'G#', octave: 1 }, { name: 'A#', octave: 1 }],
+                'Bb': [ { name: 'Bb', octave: 0 }, { name: 'Db', octave: 1 }, { name: 'Eb', octave: 1 }, { name: 'F', octave: 1 }, { name: 'Ab', octave: 1 }, { name: 'Bb', octave: 1 }],
+                'B': [ { name: 'B', octave: 0 }, { name: 'D', octave: 1 }, { name: 'E', octave: 1 }, { name: 'F#', octave: 1 }, { name: 'A', octave: 1 }, { name: 'B', octave: 1 }],
+                'B#': [ { name: 'B#', octave: 0 }, { name: 'D#', octave: 1 }, { name: 'E#', octave: 1 }, { name: 'F##', octave: 1 }, { name: 'A#', octave: 1 }, { name: 'B#', octave: 1 }],
+                'Cb': [ { name: 'Cb', octave: 0 }, { name: 'Ebb', octave: 0 }, { name: 'Fb', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Bbb', octave: 0 }, { name: 'Cb', octave: 1 }]
+            }
+        },
+    }
+
+    public static clefs: { [id: string]: Clef; } = {
+        'treble': { id: 'treble', name: 'Treble', baseOctave: 4, baseNote: 0 },
+        'baritone-c': { id: 'baritone-c', name: 'Baritone C-clef', baseOctave: 2, baseNote: 8 },
+        'baritone-f': { id: 'baritone-f', name: 'Baritone -F-clef', baseOctave: 2, baseNote: 8 },
+        'bass': { id: 'bass', name: 'Bass', baseOctave: 2, baseNote: 4 },
+        'alto': { id: 'alto', name: 'Baritone', baseOctave: 3, baseNote: 1 },
+        'tenor': { id: 'tenor', name: 'Tenor', baseOctave: 2, baseNote: 11 },
+        'soprano': { id: 'soprano', name: 'Soprano', baseOctave: 3, baseNote: 10 },
+        'mezzo-soprano': { id: 'mezzo-soprano', name: 'Mezzo soprano', baseOctave: 3, baseNote: 4 },
+        'subbass': { id: 'subbass', name: 'Subbass', baseOctave: 2, baseNote: 0 },
+        'french': { id: 'french', name: 'French', baseOctave: 4, baseNote: 4 },
+        'percussion': { id: 'percussion', name: 'Percussion', baseOctave: 4, baseNote: 0 },
     }
 }
