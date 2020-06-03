@@ -7,6 +7,7 @@ import { ScalesComponent } from './scales/scales.component';
 import { HomeComponent } from './home/home.component';
 import { ChordsComponent } from './chords/chords.component';
 import { InstrumentRangesComponent } from './instrument-ranges/instrument-ranges.component';
+import { TerminologyComponent } from './terminology/terminology.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InstrumentRangesComponent } from './instrument-ranges/instrument-ranges
     ScalesComponent,
     HomeComponent,
     ChordsComponent,
-    InstrumentRangesComponent
+    InstrumentRangesComponent,
+    TerminologyComponent
   ],
   imports: [
     BrowserModule,

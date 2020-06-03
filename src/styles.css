@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 125%;
     line-height: 135%;
     margin: 0px;
@@ -43,15 +43,15 @@ button:focus {
 	flex-direction: row;
 	align-items: stretch;
 	background-color: #5353ff;
-	z-index: 1000;
 	width: 100%;
-    height: 100px;
 	border-bottom: 1px solid #002222;
 
 }
 
 .header .sitename {
-	font-size: 250%;
+    font-size: 300%;
+    line-height: 125%;
+    font-family: 'Tangerine', cursive;
 	margin: auto;
 	padding: 5px 0px 10px 0px;
 	text-align: center;
@@ -73,7 +73,9 @@ button:focus {
     flex-shrink: 0;
     flex-grow: 0;
     width: 200px;
+    margin-right: -200px;
     display: inline-block;
+    z-index: 100;
     background-color: #5353ff;
     border-right: 1px solid #002222;
 }
@@ -186,4 +188,45 @@ button:focus {
 
 .content .grid .controls.shrink {
     flex-grow: 0;
+}
+
+
+
+
+/*------------------------------------------*/
+/*Terminology*/
+.content .terminology-box {
+    width: 520px;
+    margin: 0px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.content .terminology-box .title {
+    text-align: center;
+    font-size: 135%;
+    font-weight: bold;
+}
+.content .terminology-box .row {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    background: #fdfdfd;
+}
+
+.content .terminology-box .odd {
+    background: #f8f8f8;
+}
+.content .terminology-box .row .term {
+    padding: 5px;
+    width: 140px;
+    font-weight: bold;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.content .terminology-box .row .definition {
+    padding: 5px;
+    text-align: left;
 }
