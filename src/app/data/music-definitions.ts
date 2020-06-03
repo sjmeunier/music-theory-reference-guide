@@ -1,4 +1,4 @@
-import { PlayableNote, Scale, Clef} from './';
+import { PlayableNote, Scale, Clef} from '.';
 
 export abstract class MusicDefinitions {
     public static notes: PlayableNote[] = [
