@@ -50,15 +50,15 @@ export class ScalesComponent implements OnInit {
   ];
 
   public keySignatureList = [
-    { key: true, value: 'Show key sig' },
-    { key: false, value: 'Don\'t show key sig' }
+    { key: true, value: 'Yes' },
+    { key: false, value: 'No' }
   ];
 
   public scaleList = [
-    { key: 'major', value: 'Major (Ionian)' },
-    { key: 'aeolian', value: 'Natural Minor (Aeolian)' },
-    { key: 'harmonicminor', value: 'Harmonic Minor' },
-    { key: 'melodicminor', value: 'Melodic Minor' },
+    { key: 'major', value: 'Major' },
+    { key: 'aeolian', value: 'Natural Minor' },
+    { key: 'harmonic-minor', value: 'Harmonic Minor' },
+    { key: 'melodic-minor', value: 'Melodic Minor' },
     { key: 'dorian', value: 'Dorian' },
     { key: 'phrygian', value: 'Phrygian' },
     { key: 'lydian', value: 'Lydian' },
@@ -67,8 +67,8 @@ export class ScalesComponent implements OnInit {
     { key: 'major-pentatonic', value: 'Major Pentatonic' },
     { key: 'minor-pentatonic', value: 'Minor Pentatonic' },
     { key: 'suspended-pentatonic', value: 'Suspended Pentatonic' },
-    { key: 'blues-major-pentatonic', value: 'Blues Major Pentatonic' },
-    { key: 'blues-minor-pentatonic', value: 'Blues Minor Pentatonic' }    
+    { key: 'blues-major-pentatonic', value: 'Blues Major' },
+    { key: 'blues-minor-pentatonic', value: 'Blues Minor' }    
   ];
 
   public clefList = [
@@ -92,7 +92,7 @@ export class ScalesComponent implements OnInit {
     this.musicRenderer = new Vex.Flow.Renderer(div, Vex.Flow.Renderer.Backends.SVG);
     this.scaleClef = 'treble';
     this.scaleRootBase = 'C';
-    this.showKeySignature = false;
+    this.showKeySignature = true;
     this.scaleRootAccidental = '';
     this.setScaleRoot();
     this.scaleType = 'major';
@@ -125,7 +125,7 @@ export class ScalesComponent implements OnInit {
 			this.vexFlowNotes.push(vexFlowNote);
     }
 
-    this.musicRenderer.resize(130 + (45 * this.vexFlowNotes.length), 120);
+    this.musicRenderer.resize(550, 120);
   }
   public renderScale() {
 
@@ -138,7 +138,7 @@ export class ScalesComponent implements OnInit {
 
     this.contextGroup = context.openGroup();
 
-		var stave = new Vex.Flow.Stave(10, 0, 110 + (45 * this.vexFlowNotes.length));
+		var stave = new Vex.Flow.Stave(10, 0, 530);
     stave.addClef(this.scaleClef);
     if (this.showKeySignature === true && this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length > 0) {
       stave.addKeySignature(this.selectedScale.scaleNotes[this.scaleRoot].keySignature);
@@ -149,7 +149,7 @@ export class ScalesComponent implements OnInit {
       var voice = new Vex.Flow.Voice({num_beats: this.vexFlowNotes.length,  beat_value: 2});
       voice.addTickables(this.vexFlowNotes);
 
-      var formatter = new Vex.Flow.Formatter().joinVoices([voice]).format([voice], 45 * this.selectedScale.intervals.length);
+      var formatter = new Vex.Flow.Formatter().joinVoices([voice]).format([voice], 450);
       voice.draw(context, stave);
     }
     

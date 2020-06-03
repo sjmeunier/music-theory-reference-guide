@@ -1,20 +1,47 @@
 <div class="container">
     <h2>Scales</h2>
-    <div id="scaleMusic"></div>
-    <button (click)="play()">Play</button>
-    <ul class="buttonlist roots">
-        <li *ngFor="let item of rootBaseNoteList" [ngClass]="{'selected': item.key === scaleRootBase}" (click)="selectRootBase(item.key)">{{item.value}}</li>
-    </ul>
-    <ul class="buttonlist accidentals">
-        <li *ngFor="let item of rootAccidentalList" [ngClass]="{'selected': item.key === scaleRootAccidental}" (click)="selectRootAccidental(item.key)">{{item.value}}</li>
-    </ul>
-    <ul class="buttonlist scales">
-        <li *ngFor="let item of scaleList" [ngClass]="{'selected': item.key === scaleType}" (click)="selectScale(item.key)">{{item.value}}</li>
-    </ul>
-    <ul class="buttonlist clef">
-        <li *ngFor="let item of clefList" [ngClass]="{'selected': item.key === scaleClef}" (click)="selectClef(item.key)">{{item.value}}</li>
-    </ul>
-    <ul class="buttonlist keysignature">
-        <li *ngFor="let item of keySignatureList" [ngClass]="{'selected': item.key === showKeySignature}" (click)="selectKeySignature(item.key)">{{item.value}}</li>
-    </ul>
+    <div class="music">
+        <div id="scaleMusic" class="stave"></div>
+        <div class="controls">
+            <button (click)="play()"><i class="far fa-play-circle"></i></button>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="label">Key</div>
+            <div class="controls">
+                <ul class="buttonlist key">
+                    <li *ngFor="let item of rootBaseNoteList" [ngClass]="{'selected': item.key === scaleRootBase}" (click)="selectRootBase(item.key)">{{item.value}}</li>
+                    <li class="spacer"></li>
+                    <li *ngFor="let item of rootAccidentalList" [ngClass]="{'selected': item.key === scaleRootAccidental}" (click)="selectRootAccidental(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">Scale</div>
+            <div class="controls">
+                <ul class="buttonlist scales">
+                    <li *ngFor="let item of scaleList" [ngClass]="{'selected': item.key === scaleType}" (click)="selectScale(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">Clef</div>
+            <div class="controls">
+                <ul class="buttonlist clef">
+                    <li *ngFor="let item of clefList" [ngClass]="{'selected': item.key === scaleClef}" (click)="selectClef(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">Key Sig</div>
+            <div class="controls shrink">
+                <ul class="buttonlist keysignature">
+                    <li *ngFor="let item of keySignatureList" [ngClass]="{'selected': item.key === showKeySignature}" (click)="selectKeySignature(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
 </div>
