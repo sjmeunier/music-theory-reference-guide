@@ -1,6 +1,6 @@
 import { MusicDefinitions } from '../data/music-definitions';
 
-export class SynthPlayer {
+export class OscSynthPlayer {
     private noteStartCallback: any;
     private noteEndCallback: any;
     private noteIds: number[];

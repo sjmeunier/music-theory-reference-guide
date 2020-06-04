@@ -1,13 +1,15 @@
 import { MusicDefinitions } from '../data/music-definitions';
-import { Piano } from '@tonejs/piano';
 
-export class PianoPlayer {
+declare var Synth: any;
+declare var AudioSynth: any;
+
+export class PianoSynthPlayer {
     private noteStartCallback: any;
     private noteEndCallback: any;
     private noteIds: number[];
     private noteDuration: number;
     private isChord: boolean;
-    private piano: any;
+    private synth: any;
 
     private callingContext: any;
     private loaded: boolean = false;
@@ -16,49 +18,30 @@ export class PianoPlayer {
         this.noteIds = noteIds;
         this.noteStartCallback = noteStartCallback;
         this.noteEndCallback = noteEndCallback;
-        this.noteDuration = noteDuration * 1000;
+        this.noteDuration = noteDuration;
         this.isChord = isChord;
         this.callingContext = callingContext;
 
-        this.piano = new Piano({
-            velocities: 5
-        });
-        this.piano.toDestination();
-        this.piano.load().then(() => {
-            this.loaded = true;
-        })
+        this.synth = new AudioSynth();
     }
 
     public play() {
-        if (this.loaded) {
-            if (this.isChord === false) {
-                this.playNote(0);
-            } else {
-                this.playChord();
-            }
+        if (this.isChord === false) {
+            this.playNote(0);
+        } else {
+            this.playChord();
         }
     }
 
     private playChord() {
-        var self = this;
-        var noteList = [];
         for(var i = 0; i < this.noteIds.length; i++) {
             var note = MusicDefinitions.notes[this.noteIds[i]];
             var noteName = note.name;
             if (noteName.length > 2) {
                 noteName = noteName.substring(0, 2);
             }
-            noteList.push(noteName + note.octave);
-
+            this.synth.play(0, noteName, note.octave, 2);
         }
-        for(var i = 0; i < noteList.length; i++) {
-            this.piano.keyDown(noteList[i]);
-        }
-        setTimeout(() => {
-            for(var i = 0; i < noteList.length; i++) {
-                this.piano.keyUp(noteList[i]);
-            }
-        }, this.noteDuration);
     }
     
     private playNote(index: number) {
@@ -70,9 +53,9 @@ export class PianoPlayer {
             if (noteName.length > 2) {
                 noteName = noteName.substring(0, 2);
             }
-
-            this.noteEndCallback(index - 1, this.callingContext);
-            this.piano.keyUp(noteName + lastNote.octave);
+            if (this.noteEndCallback != null) {
+                this.noteEndCallback(index - 1, this.callingContext);
+            }
         }
 
         if (index < this.noteIds.length) {
@@ -82,12 +65,14 @@ export class PianoPlayer {
                 noteName = noteName.substring(0, 2);
             }
 
-            this.noteStartCallback(index, this.callingContext);
-            this.piano.keyDown(noteName + note.octave);
+            if (this.noteStartCallback != null) {
+                this.noteStartCallback(index, this.callingContext);
+            }
+            this.synth.play(0, noteName, note.octave, 2);
 
             setTimeout(() => {
                 self.playNote(index + 1);
-            }, this.noteDuration);
+            }, this.noteDuration * 1000);
         }
 	}
 }

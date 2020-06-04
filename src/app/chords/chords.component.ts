@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MusicDefinitions } from '../data/music-definitions';
 import { UILists } from '../data/ui-lists';
 import { MusicLib } from '../data/music-lib';
-import { SynthPlayer } from '../player/synth-player';
-import { PianoPlayer } from '../player/piano-player';
+import { PianoSynthPlayer } from '../player/piano-synth-player';
 import { Chord } from '../data/chord.interface';
 declare var Vex: any;
 
@@ -37,7 +36,7 @@ export class ChordsComponent implements OnInit {
   private contextGroup: any = null;
   private vexFlowNotes: any[];
 
-  private player: SynthPlayer;
+  private player: PianoSynthPlayer;
 
   private noteDuration: number = 1;
 
@@ -88,7 +87,7 @@ export class ChordsComponent implements OnInit {
     for(var i = 0; i < this.selectedChord.intervals.length; i++) {
       noteIds.push(this.noteId + this.selectedChord.intervals[i]);
     }
-    this.player = new SynthPlayer(noteIds, this.noteDuration, true, null, null, this);
+    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, true, null, null, this);
 
     this.musicRenderer.resize(150, 120);
     this.renderChord();

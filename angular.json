@@ -27,7 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/vexflow/releases/vexflow-min.js"
+              "node_modules/vexflow/releases/vexflow-min.js",
+              "src/assets/js/audiosynth/audiosynth.js"
             ]
           },
           "configurations": {

@@ -4,7 +4,7 @@ import { UILists } from '../data/ui-lists';
 import { Scale } from '../data/scale.interface';
 import { MusicLib } from '../data/music-lib';
 import { SynthPlayer } from '../player/synth-player';
-import { PianoPlayer } from '../player/piano-player';
+import { PianoSynthPlayer } from '../player/piano-synth-player';
 declare var Vex: any;
 
 @Component({
@@ -38,9 +38,9 @@ export class ScalesComponent implements OnInit {
   private contextGroup: any = null;
   private vexFlowNotes: any[];
 
-  private player: SynthPlayer;
+  private player: PianoSynthPlayer;
 
-  private noteDuration: number = 0.3;
+  private noteDuration: number = 0.5;
 
   private self: any;
 
@@ -68,7 +68,7 @@ export class ScalesComponent implements OnInit {
       var vexFlowNote = new Vex.Flow.StaveNote({clef: this.scaleClef, keys: [vexFlowKey], duration: 'h' })
         .addModifier(0, new Vex.Flow.Annotation(MusicLib.prettifyAccidentals(noteName))
           .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
-              
+
       if ((this.showKeySignature === false  || this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length == 0) && noteName.length > 1) {
         vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental(noteName.substring(1)));
       }
@@ -79,7 +79,7 @@ export class ScalesComponent implements OnInit {
     for(var i = 0; i < this.selectedScale.intervals.length; i++) {
       noteIds.push(this.noteId + this.selectedScale.intervals[i]);
     }
-    this.player = new SynthPlayer(noteIds, this.noteDuration, false, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
+    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, false, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
     //this.player = new PianoPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
 
     this.musicRenderer.resize(550, 120);
