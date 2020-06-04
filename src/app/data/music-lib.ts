@@ -9,44 +9,44 @@ export abstract class MusicLib {
             case 'C#':
             case 'Db':
               baseNoteId = 1;
-              break;      
+              break;
             case 'D':
               baseNoteId = 2;
-              break;      
+              break;
             case 'D#':
             case 'Eb':
               baseNoteId = 3;
-              break;      
+              break;
             case 'E':
             case 'Fb':
               baseNoteId = 4;
-              break;      
+              break;
             case 'E#':
             case 'F':
               baseNoteId = 5;
-              break;      
+              break;
             case 'F#':
             case 'Gb':
               baseNoteId = 6;
-              break;      
+              break;
             case 'G':
               baseNoteId = 7;
-              break;      
+              break;
             case 'G#':
             case 'Ab':
               baseNoteId = 8;
-              break;      
+              break;
             case 'A':
               baseNoteId = 9;
-              break;      
+              break;
             case 'A#':
             case 'Bb':
               baseNoteId = 10;
-              break;      
+              break;
             case 'B':
             case 'Cb':
               baseNoteId = 11;
-              break;      
+              break;
         }
         return baseNoteId;
     }

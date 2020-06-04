@@ -27,10 +27,10 @@ export class SynthPlayer {
             this.audioContext = new (window['AudioContext'] || window['webkitAudioContext'])();
             if (this.audioContext !== undefined) {
                 this.loaded = true;
-    
+
                 this.gain = this.audioContext.createGain();
                 this.gain.gain.value = 0;
-    
+
                 var oscillatorCount = 1;
                 if (isChord === true) {
                     oscillatorCount = noteIds.length;
@@ -76,7 +76,7 @@ export class SynthPlayer {
         }, this.noteDuration);
     }
     
-	private playNote(index: number) {
+    private playNote(index: number) {
         var self = this;
 
         var note = MusicDefinitions.notes[this.noteIds[index]];

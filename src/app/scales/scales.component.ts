@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicDefinitions } from '../data/music-definitions';
 import { UILists } from '../data/ui-lists';
-import { PlayableNote } from '../data/playable-note.interface';
 import { Scale } from '../data/scale.interface';
 import { MusicLib } from '../data/music-lib';
 import { SynthPlayer } from '../player/synth-player';
@@ -61,25 +60,25 @@ export class ScalesComponent implements OnInit {
   public generateScale() {
     this.selectedScale = MusicDefinitions.scales[this.scaleType];
     this.vexFlowNotes = [];
-		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
+    for(var i = 0; i < this.selectedScale.intervals.length; i++) {
       var noteName: string = this.selectedScale.scaleNotes[this.scaleRoot].notes[i].name;
 
       var vexFlowKey: string =  noteName + '/' + (this.scaleOctave +  this.selectedScale.scaleNotes[this.scaleRoot].notes[i].octave);
 
-			var vexFlowNote = new Vex.Flow.StaveNote({clef: this.scaleClef, keys: [vexFlowKey], duration: 'h' })
-			  .addModifier(0, new Vex.Flow.Annotation(MusicLib.prettifyAccidentals(noteName))
-				  .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
+      var vexFlowNote = new Vex.Flow.StaveNote({clef: this.scaleClef, keys: [vexFlowKey], duration: 'h' })
+        .addModifier(0, new Vex.Flow.Annotation(MusicLib.prettifyAccidentals(noteName))
+          .setVerticalJustification(Vex.Flow.Annotation.VerticalJustify.BOTTOM));
               
       if ((this.showKeySignature === false  || this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length == 0) && noteName.length > 1) {
         vexFlowNote = vexFlowNote.addAccidental(0, new Vex.Flow.Accidental(noteName.substring(1)));
       }
-			this.vexFlowNotes.push(vexFlowNote);
+      this.vexFlowNotes.push(vexFlowNote);
     }
 
     var noteIds: number[] = [];
     for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-			noteIds.push(this.noteId + this.selectedScale.intervals[i]);
-		}
+      noteIds.push(this.noteId + this.selectedScale.intervals[i]);
+    }
     this.player = new SynthPlayer(noteIds, this.noteDuration, false, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
     //this.player = new PianoPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
 
@@ -97,12 +96,12 @@ export class ScalesComponent implements OnInit {
 
     this.contextGroup = context.openGroup();
 
-		var stave = new Vex.Flow.Stave(10, 0, 530);
+    var stave = new Vex.Flow.Stave(10, 0, 530);
     stave.addClef(this.scaleClef);
     if (this.showKeySignature === true && this.selectedScale.scaleNotes[this.scaleRoot].keySignature.length > 0) {
       stave.addKeySignature(this.selectedScale.scaleNotes[this.scaleRoot].keySignature);
     }
-		stave.setContext(context).draw();
+    stave.setContext(context).draw();
 
     if (this.vexFlowNotes.length > 0) {
       var voice = new Vex.Flow.Voice({num_beats: this.vexFlowNotes.length,  beat_value: 2});
@@ -117,8 +116,8 @@ export class ScalesComponent implements OnInit {
 
   public play() {
     this.player.play();
-	}
-			
+  }
+
   //The calling context in these callback functions is a bit of hack to regain the local context (this)
   //Otherwise the method gets executed in the context of whichever class is calling the function
   private setActiveNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
@@ -128,9 +127,9 @@ export class ScalesComponent implements OnInit {
   private setStandardNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
     callingContext.setNoteStyle(vexFlowNoteIndex, 'black');
   }
-	
-	private setNoteStyle = function (vexFlowNoteIndex: number, color: string) {
-		this.vexFlowNotes[vexFlowNoteIndex].setStyle({fillStyle: color, strokeStyle: color});
+
+  private setNoteStyle = function (vexFlowNoteIndex: number, color: string) {
+    this.vexFlowNotes[vexFlowNoteIndex].setStyle({fillStyle: color, strokeStyle: color});
     this.renderScale();
   }
   
@@ -177,5 +176,3 @@ export class ScalesComponent implements OnInit {
     this.generateScale();
   }
 }
-
-

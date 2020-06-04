@@ -61,7 +61,7 @@ export class PianoPlayer {
         }, this.noteDuration);
     }
     
-	private playNote(index: number) {
+    private playNote(index: number) {
         var self = this;
 
         if (index > 0) {

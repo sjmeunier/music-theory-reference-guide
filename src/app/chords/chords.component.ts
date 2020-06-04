@@ -86,8 +86,8 @@ export class ChordsComponent implements OnInit {
 
     var noteIds: number[] = [];
     for(var i = 0; i < this.selectedChord.intervals.length; i++) {
-			noteIds.push(this.noteId + this.selectedChord.intervals[i]);
-		}
+      noteIds.push(this.noteId + this.selectedChord.intervals[i]);
+    }
     this.player = new SynthPlayer(noteIds, this.noteDuration, true, null, null, this);
 
     this.musicRenderer.resize(150, 120);
@@ -104,9 +104,9 @@ export class ChordsComponent implements OnInit {
 
     this.contextGroup = context.openGroup();
 
-		var stave = new Vex.Flow.Stave(10, 0, 130);
+    var stave = new Vex.Flow.Stave(10, 0, 130);
     stave.addClef(this.chordClef);
-		stave.setContext(context).draw();
+    stave.setContext(context).draw();
 
     if (this.vexFlowNotes.length > 0) {
       var voice = new Vex.Flow.Voice({num_beats: this.vexFlowNotes.length,  beat_value: 2});
@@ -121,7 +121,7 @@ export class ChordsComponent implements OnInit {
 
   public play() {
     this.player.play();
-	}
+  }
 
   private setChordRoot()
   {
