@@ -52,10 +52,10 @@ export abstract class MusicLib {
     }
 
     public static prettifyAccidentals(noteName: string): string {
-        noteName = noteName.replace('bb', '\uD834\uDD2B');
-        noteName = noteName.replace('##', '\uD834\uDD2A');
-        noteName = noteName.replace('b', '\u266D');
-        noteName = noteName.replace('#', '\u266F');
+        noteName = noteName[0] + noteName.slice(1).replace('bb', '\uD834\uDD2B');
+        noteName = noteName[0] + noteName.slice(1).replace('##', '\uD834\uDD2A');
+        noteName = noteName[0] + noteName.slice(1).replace('b', '\u266D');
+        noteName = noteName[0] + noteName.slice(1).replace('#', '\u266F');
         return noteName;
       }
 }

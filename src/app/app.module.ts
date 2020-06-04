@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ChordsComponent } from './chords/chords.component';
 import { InstrumentRangesComponent } from './instrument-ranges/instrument-ranges.component';
 import { TerminologyComponent } from './terminology/terminology.component';
+import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TerminologyComponent } from './terminology/terminology.component';
     HomeComponent,
     ChordsComponent,
     InstrumentRangesComponent,
-    TerminologyComponent
+    TerminologyComponent,
+    CircleOfFifthsComponent
   ],
   imports: [
     BrowserModule,

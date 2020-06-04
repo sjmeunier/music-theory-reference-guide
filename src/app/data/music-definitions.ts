@@ -1,4 +1,5 @@
 import { PlayableNote, Scale, Clef} from '.';
+import { Chord } from './chord.interface';
 
 export abstract class MusicDefinitions {
     public static notes: PlayableNote[] = [
@@ -529,5 +530,23 @@ export abstract class MusicDefinitions {
         'subbass': { id: 'subbass', name: 'Subbass', baseOctave: 2, baseNote: 0 },
         'french': { id: 'french', name: 'French', baseOctave: 4, baseNote: 4 },
         'percussion': { id: 'percussion', name: 'Percussion', baseOctave: 4, baseNote: 0 },
+    }
+
+    public static chords: { [id:string]: Chord; } = {
+        'major-triad': { name: 'Major', symbol: 'M', intervals: [0, 4, 7]},
+        'minor-triad': { name: 'Minor', symbol: 'm', intervals: [0, 3, 7]},
+        'augmented-triad': { name: 'Augmented', symbol: 'aug', intervals: [0, 4, 8]},
+        'diminished-triad': { name: 'Diminished', symbol: 'dim', intervals: [0, 3, 6]},
+        'dominant-seventh': { name: 'Dominant 7th', symbol: '7', intervals: [0, 4, 7, 10]},
+        'major-seventh': { name: 'Major 7th', symbol: 'M7', intervals: [0, 4, 7, 11]},
+        'minor-seventh': { name: 'Minor 7th', symbol: 'm7', intervals: [0, 3, 7, 10]},
+        'min-maj-seventh': { name: 'Minor-major 7th', symbol: 'mM7', intervals: [0, 3, 7, 11]},
+        'half-diminished-seventh': { name: 'Half diminished 7th', symbol: 'ø7', intervals: [0, 3, 6, 10]},
+        'diminished-seventh': { name: 'Diminished 7th', symbol: 'oM7', intervals: [0, 3, 6, 11]},
+        'augmented-seventh': { name: 'Augmented 7th', symbol: '7♯5', intervals: [0, 4, 8, 10]},
+        'aug-maj-seventh': { name: 'Augmented major 7th', symbol: 'M7♯5', intervals: [0, 4, 8, 11]},
+        'suspended-second': { name: 'Suspended 2nd', symbol: 'sus2', intervals: [0, 2, 7]},
+        'suspended-fourth': { name: 'Suspended 4th', symbol: 'sus4', intervals: [0, 5, 7]},
+        'dominant-seventh-suspended-fourth': { name: 'Dom. 7th Sus. 4th', symbol: 'min', intervals: [0, 5, 7, 10]}
     }
 }

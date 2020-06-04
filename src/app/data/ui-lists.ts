@@ -49,4 +49,22 @@ export abstract class UILists {
         { key: 'subbass', value: 'Subbass' },
         { key: 'french', value: 'French' }
     ];
+
+    public static chordTypeList = [
+        { key: 'major-triad', value: 'Major' },
+        { key: 'minor-triad', value: 'Minor' },
+        { key: 'augmented-triad', value: 'Augmented' },
+        { key: 'diminished-triad', value: 'Diminished' },
+        { key: 'dominant-seventh', value: 'Dominant 7th' },
+        { key: 'major-seventh', value: 'Major 7th' },
+        { key: 'minor-seventh', value: 'Minor 7th' },
+        { key: 'min-maj-seventh', value: 'Min-maj 7th' },
+        { key: 'half-diminished-seventh', value: 'Half-dim. 7th' },
+        { key: 'diminished-seventh', value: 'Diminished 7th' },
+        { key: 'augmented-seventh', value: 'Augmented 7th' },
+        { key: 'aug-maj-seventh', value: 'Aug-maj. 7th' },
+        { key: 'suspended-second', value: 'Suspended 2nd' },
+        { key: 'suspended-fourth', value: 'Suspended 4th' },
+        { key: 'dominant-seventh-suspended-fourth', value: 'Dom. 7th, Sus 4th' }
+    ];
 }

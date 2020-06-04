@@ -1,19 +1,19 @@
 <div class="container">
-        <h2>Terminology</h2>
-        <div class="grid">
-            <div class="row">
-                <div class="controls">
-                    <ul class="buttonlist">
-                        <li *ngFor="let item of categoryList" [ngClass]="{'selected': item.key === selectedCategory}" (click)="selectCategory(item.key)">{{item.value}}</li>
-                   </ul>
-                </div>
+    <h2>Terminology</h2>
+    <div class="grid">
+        <div class="row">
+            <div class="controls">
+                <ul class="buttonlist">
+                    <li *ngFor="let item of categoryList" [ngClass]="{'selected': item.key === selectedCategory}" (click)="selectCategory(item.key)">{{item.value}}</li>
+                </ul>
             </div>
         </div>
-        <div class="terminology-box">
-            <div class="row" *ngFor="let item of selectedTerms; let index = index" [ngClass]="{'odd': (index % 2) === 1}">
-                <div class="term">{{item.term}}</div>
-                <div class="definition">{{item.definition}}</div>
-            </div>
-        </div>  
-    
     </div>
+    <div class="terminology-box">
+        <div class="row" *ngFor="let item of selectedTerms; let index = index" [ngClass]="{'odd': (index % 2) === 1}">
+            <div class="term">{{item.term}}</div>
+            <div class="definition">{{item.definition}}</div>
+        </div>
+    </div>  
+
+</div>

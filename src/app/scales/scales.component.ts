@@ -4,6 +4,8 @@ import { UILists } from '../data/ui-lists';
 import { PlayableNote } from '../data/playable-note.interface';
 import { Scale } from '../data/scale.interface';
 import { MusicLib } from '../data/music-lib';
+import { SynthPlayer } from '../player/synth-player';
+import { PianoPlayer } from '../player/piano-player';
 declare var Vex: any;
 
 @Component({
@@ -37,13 +39,13 @@ export class ScalesComponent implements OnInit {
   private contextGroup: any = null;
   private vexFlowNotes: any[];
 
-  private noteDuration: number = 0.4;
-  private noteInterval: number = 0;
+  private player: SynthPlayer;
 
-  private audioContext: any;
+  private noteDuration: number = 0.3;
+
+  private self: any;
 
   ngOnInit(): void {
-
     var div = document.getElementById("scaleMusic")
 
     this.musicRenderer = new Vex.Flow.Renderer(div, Vex.Flow.Renderer.Backends.SVG);
@@ -73,6 +75,13 @@ export class ScalesComponent implements OnInit {
       }
 			this.vexFlowNotes.push(vexFlowNote);
     }
+
+    var noteIds: number[] = [];
+    for(var i = 0; i < this.selectedScale.intervals.length; i++) {
+			noteIds.push(this.noteId + this.selectedScale.intervals[i]);
+		}
+    this.player = new SynthPlayer(noteIds, this.noteDuration, false, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
+    //this.player = new PianoPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
 
     this.musicRenderer.resize(550, 120);
     this.renderScale();
@@ -107,33 +116,18 @@ export class ScalesComponent implements OnInit {
   }
 
   public play() {
-		this.audioContext = new (window['AudioContext'] || window['webkitAudioContext'])();
-		for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-			this.playNote(MusicDefinitions.notes[this.noteId + this.selectedScale.intervals[i]], i);
-		}
+    this.player.play();
 	}
 			
-	private playNote(note: PlayableNote, index: number) {
-		var self = this;
-		var startTime = index * (this.noteDuration + this.noteInterval);
-		const silentOscillator = this.audioContext.createOscillator();
-		silentOscillator.connect(this.audioContext.destination);
-		silentOscillator.onended = () => {
-			self.setNoteStyle(index, "blue");
-		};
-		silentOscillator.start(startTime);
-		silentOscillator.stop(startTime);
+  //The calling context in these callback functions is a bit of hack to regain the local context (this)
+  //Otherwise the method gets executed in the context of whichever class is calling the function
+  private setActiveNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
+    callingContext.setNoteStyle(vexFlowNoteIndex, 'blue');
+  }
 
-		var oscillator = this.audioContext.createOscillator();
-		oscillator.type = "sine";
-		oscillator.frequency.value = note.frequency;
-		oscillator.onended = () => {
-			self.setNoteStyle(index, "black");
-		};
-		oscillator.start(startTime);
-		oscillator.stop(startTime + this.noteDuration);
-		oscillator.connect(this.audioContext.destination);
-	}
+  private setStandardNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
+    callingContext.setNoteStyle(vexFlowNoteIndex, 'black');
+  }
 	
 	private setNoteStyle = function (vexFlowNoteIndex: number, color: string) {
 		this.vexFlowNotes[vexFlowNoteIndex].setStyle({fillStyle: color, strokeStyle: color});
