@@ -1,15 +1,12 @@
 <div class="layout">
   <div class="header">
+    <div id="navbarToggle" (click)="toggleNavbar()"><img src="../assets/images/menu.png" /></div>
     <div class="sitename">{{title}}</div>
   </div>
   <div class="main">
-    <div class="navbar">
+    <div id="navbar" class="navbar" style="display:none;">
       <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/scales">Scales</a></li>
-        <li><a routerLink="/chords">Chords</a></li>
-        <li><a routerLink="/circle-of-fifths">Circle Of Fifths</a></li>
-        <li><a routerLink="/terminology">Terminology</a></li>
+        <li *ngFor="let item of navRoutes" [ngClass]="{'selected': getRoute() === item.route}"><a routerLink="{{item.route}}">{{item.text}}</a></li>
       </ul>
     </div>
     <div class="content">
@@ -17,6 +14,6 @@
     </div>
   </div>
   <div class="footer">
-
+    Developed by Serge Meunier - <a href="https://www.magnaursa.com">Magna Ursa Consulting</a>. 
   </div>
 </div>

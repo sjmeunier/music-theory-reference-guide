@@ -7,8 +7,8 @@ body {
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+    color: #666;
+    text-decoration: none;
 }
 
 button {
@@ -25,7 +25,7 @@ button {
 }
 button:focus { 
     outline-color: #333;
- }
+}
 
 .layout {
     display: flex;
@@ -38,29 +38,47 @@ button:focus {
 .header {
     flex-shrink: 0;
     flex-grow: 0;
-	color: #55eaea;
-	display: flex;
-	flex-direction: row;
-	align-items: stretch;
-	background-color: #5353ff;
-	width: 100%;
-	border-bottom: 1px solid #002222;
+    color: #55eaea;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #5353ff;
+    width: 100%;
+    box-shadow: 0px 3px 4px 0px #555;
+}
 
+.header #navbarToggle {
+    padding: 20px;
+    margin-right: -80px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.header #navbarToggle img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 3px #333);
 }
 
 .header .sitename {
     font-size: 300%;
     line-height: 125%;
     font-family: 'Tangerine', cursive;
-	margin: auto;
-	padding: 5px 0px 10px 0px;
-	text-align: center;
-	flex-grow: 1;
-	color: #ffffff;
-	font-weight: 200;
-
+    margin: auto;
+    padding: 5px 0px 10px 0px;
+    text-align: center;
+    flex-grow: 1;
+    color: #ffffff;
+    font-weight: 200;
+    text-shadow: 2px 2px 2px #555;
 }
 
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 80%;
+}
 .main {
     flex-shrink: 0;
     flex-grow: 1;
@@ -76,15 +94,48 @@ button:focus {
     margin-right: -200px;
     display: inline-block;
     z-index: 100;
-    background-color: #5353ff;
-    border-right: 1px solid #002222;
+    background-color: transparent;
 }
 
 .navbar ul {
-    color: #eee;
+    color: #333;
     list-style: none;
-    padding: 10px;
+    margin: 20px;
+
+    border-radius: 8px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    border: 1px solid #999;
+    text-align: left;
+    box-shadow: 2px 2px 3px #999;
 }
+
+.navbar li {
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0px;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    padding: 2px 5px;
+    flex-grow: 1;
+}
+
+.navbar ul li.selected {
+    background-color: #333399;
+    border: 1px solid #333399;
+    color: #fff;
+}
+.navbar li a {
+    display: block;
+    color: #000;
+}
+
+
 .content {
     flex-shrink: 0;
     flex-grow: 1;
@@ -99,6 +150,7 @@ button:focus {
     display: inline-block;
     background-color: #fff;
     border-radius: 8px;
+    box-shadow: 2px 2px 5px #999;
 }
 
 .content .container h2 {
@@ -132,6 +184,7 @@ button:focus {
     overflow:hidden;
     border: 1px solid #999;
     text-align: center;
+    box-shadow: 2px 2px 3px #bbb;
 }
 
 
