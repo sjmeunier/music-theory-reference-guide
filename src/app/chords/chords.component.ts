@@ -83,11 +83,13 @@ export class ChordsComponent implements OnInit {
 
     this.vexFlowNotes = [vexFlowNote];
 
-    var noteIds: number[] = [];
+    var noteIds: number[][] = [];
+    var chordNoteIds: number[] = [];
     for(var i = 0; i < this.selectedChord.intervals.length; i++) {
-      noteIds.push(this.noteId + this.selectedChord.intervals[i]);
+      chordNoteIds.push(this.noteId + this.selectedChord.intervals[i]);
     }
-    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, true, null, null, this);
+    noteIds.push(chordNoteIds);
+    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, null, null, this);
 
     this.musicRenderer.resize(150, 120);
     this.renderChord();

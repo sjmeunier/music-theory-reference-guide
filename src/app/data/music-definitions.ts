@@ -118,6 +118,9 @@ export abstract class MusicDefinitions {
             name: 'Major',
             alternateNames: 'Ionian',
             intervals: [0, 2, 4, 5, 7, 9, 11, 12],
+            chords: {
+                'triads': ['major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'C', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'C#', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -146,6 +149,9 @@ export abstract class MusicDefinitions {
             name: 'Dorian',
             alternateNames: '',
             intervals: [0, 2, 3, 5, 7, 9, 10, 12],
+            chords: {
+                'triads': ['minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'Bb', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -175,6 +181,9 @@ export abstract class MusicDefinitions {
             name: 'Phrygian',
             alternateNames: '',
             intervals: [0, 1, 3, 5, 7, 8, 10, 12],
+            chords: {
+                'triads': ['minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'Ab', notes: [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'A', notes: [ { name: 'C#', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -204,6 +213,9 @@ export abstract class MusicDefinitions {
             name: 'Lydian',
             alternateNames: '',
             intervals: [0, 2, 4, 6, 7, 9, 11, 12],
+            chords: {
+                'triads': ['major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'G', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E#', octave: 0 }, { name: 'F##', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -233,6 +245,9 @@ export abstract class MusicDefinitions {
             name: 'Mixolydian',
             alternateNames: '',
             intervals: [0, 2, 4, 5, 7, 9, 10, 12],
+            chords: {
+                'triads': ['major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'F', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'F#', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -262,6 +277,9 @@ export abstract class MusicDefinitions {
             name: 'Natural Minor',
             alternateNames: 'Aeolian',
             intervals: [0, 2, 3, 5, 7, 8, 10, 12],
+            chords: {
+                'triads': ['minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'Eb', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'E', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -291,6 +309,9 @@ export abstract class MusicDefinitions {
             name: 'Harmonic Minor',
             alternateNames: '',
             intervals: [0, 2, 3, 5, 7, 8, 11, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -319,6 +340,9 @@ export abstract class MusicDefinitions {
             name: 'Melodic Minor',
             alternateNames: '',
             intervals: [0, 2, 3, 5, 7, 9, 11, 12, 10, 8, 7, 5, 3, 2, 0],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Bb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'G', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'D', octave: 0 }, { name: 'C', octave: 0 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'B#', octave: 0 }, { name: 'C#', octave: 1 }, { name: 'B', octave: 0 }, { name: 'A', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'E', octave: 0 },  { name: 'D#', octave: 0 }, { name: 'C#', octave: 0 }] },
@@ -347,6 +371,9 @@ export abstract class MusicDefinitions {
             name: 'Locrian',
             alternateNames: '',
             intervals: [0, 1, 3, 5, 6, 8, 10, 12],
+            chords: {
+                'triads': ['diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad'],
+            },
             scaleNotes: {
                 'C': { keySignature: 'Db', notes: [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'D', notes: [ { name: 'C#', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -376,6 +403,9 @@ export abstract class MusicDefinitions {
             name: 'Major Pentatonic',
             alternateNames: '',
             intervals: [0, 2, 4, 7, 9, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -405,6 +435,9 @@ export abstract class MusicDefinitions {
             name: 'Suspended Pentatonic',
             alternateNames: 'Egyptian',
             intervals: [0, 2, 5, 7, 10, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -434,6 +467,9 @@ export abstract class MusicDefinitions {
             name: 'Blues Minor',
             alternateNames: 'Man Gong',
             intervals: [0, 3, 5, 8, 10, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -463,6 +499,9 @@ export abstract class MusicDefinitions {
             name: 'Blues Major',
             alternateNames: 'Ritsusen',
             intervals: [0, 2, 5, 7, 9, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A#', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -492,6 +531,9 @@ export abstract class MusicDefinitions {
             name: 'Minor Pentatonic',
             alternateNames: '',
             intervals: [0, 3, 5, 7, 10, 12],
+            chords: {
+                'triads': [],
+            },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: '', notes: [ { name: 'C#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -533,20 +575,20 @@ export abstract class MusicDefinitions {
     }
 
     public static chords: { [id:string]: Chord; } = {
-        'major-triad': { name: 'Major', symbol: 'M', intervals: [0, 4, 7]},
-        'minor-triad': { name: 'Minor', symbol: 'm', intervals: [0, 3, 7]},
-        'augmented-triad': { name: 'Augmented', symbol: 'aug', intervals: [0, 4, 8]},
-        'diminished-triad': { name: 'Diminished', symbol: 'dim', intervals: [0, 3, 6]},
-        'dominant-seventh': { name: 'Dominant 7th', symbol: '7', intervals: [0, 4, 7, 10]},
-        'major-seventh': { name: 'Major 7th', symbol: 'M7', intervals: [0, 4, 7, 11]},
-        'minor-seventh': { name: 'Minor 7th', symbol: 'm7', intervals: [0, 3, 7, 10]},
-        'min-maj-seventh': { name: 'Minor-major 7th', symbol: 'mM7', intervals: [0, 3, 7, 11]},
-        'half-diminished-seventh': { name: 'Half diminished 7th', symbol: 'ø7', intervals: [0, 3, 6, 10]},
-        'diminished-seventh': { name: 'Diminished 7th', symbol: 'oM7', intervals: [0, 3, 6, 11]},
-        'augmented-seventh': { name: 'Augmented 7th', symbol: '7♯5', intervals: [0, 4, 8, 10]},
-        'aug-maj-seventh': { name: 'Augmented major 7th', symbol: 'M7♯5', intervals: [0, 4, 8, 11]},
-        'suspended-second': { name: 'Suspended 2nd', symbol: 'sus2', intervals: [0, 2, 7]},
-        'suspended-fourth': { name: 'Suspended 4th', symbol: 'sus4', intervals: [0, 5, 7]},
-        'dominant-seventh-suspended-fourth': { name: 'Dom. 7th Sus. 4th', symbol: 'min', intervals: [0, 5, 7, 10]}
+        'major-triad': { name: 'Major', symbol: 'M', intervals: [0, 4, 7], heptatonicNoteIndex: [0, 2, 4]},
+        'minor-triad': { name: 'Minor', symbol: 'm', intervals: [0, 3, 7], heptatonicNoteIndex: [0, 2, 4]},
+        'augmented-triad': { name: 'Augmented', symbol: 'aug', intervals: [0, 4, 8], heptatonicNoteIndex: [0, 2, 4]},
+        'diminished-triad': { name: 'Diminished', symbol: 'dim', intervals: [0, 3, 6], heptatonicNoteIndex: [0, 2, 4]},
+        'dominant-seventh': { name: 'Dominant 7th', symbol: '7', intervals: [0, 4, 7, 10], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'major-seventh': { name: 'Major 7th', symbol: 'M7', intervals: [0, 4, 7, 11], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'minor-seventh': { name: 'Minor 7th', symbol: 'm7', intervals: [0, 3, 7, 10], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'min-maj-seventh': { name: 'Minor-major 7th', symbol: 'mM7', intervals: [0, 3, 7, 11], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'half-diminished-seventh': { name: 'Half diminished 7th', symbol: 'ø7', intervals: [0, 3, 6, 10], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'diminished-seventh': { name: 'Diminished 7th', symbol: 'oM7', intervals: [0, 3, 6, 11], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'augmented-seventh': { name: 'Augmented 7th', symbol: '7♯5', intervals: [0, 4, 8, 10], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'aug-maj-seventh': { name: 'Augmented major 7th', symbol: 'M7♯5', intervals: [0, 4, 8, 11], heptatonicNoteIndex: [0, 2, 4, 6]},
+        'suspended-second': { name: 'Suspended 2nd', symbol: 'sus2', intervals: [0, 2, 7], heptatonicNoteIndex: [0, 1, 4]},
+        'suspended-fourth': { name: 'Suspended 4th', symbol: 'sus4', intervals: [0, 5, 7], heptatonicNoteIndex: [0, 3, 4]},
+        'dominant-seventh-suspended-fourth': { name: 'Dom. 7th Sus. 4th', symbol: 'min', intervals: [0, 5, 7, 10], heptatonicNoteIndex: [0, 3, 4, 6]}
     }
 }

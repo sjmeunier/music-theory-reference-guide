@@ -4,5 +4,6 @@ export interface Scale {
     name: string;
     alternateNames: string;
     intervals: number[];
-    scaleNotes: { [id: string]: ScaleNotes; }
+    chords: { [id: string]: string []; };
+    scaleNotes: { [id: string]: ScaleNotes; };
 }

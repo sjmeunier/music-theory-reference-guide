@@ -3,7 +3,6 @@ import { MusicDefinitions } from '../data/music-definitions';
 import { UILists } from '../data/ui-lists';
 import { Scale } from '../data/scale.interface';
 import { MusicLib } from '../data/music-lib';
-import { SynthPlayer } from '../player/synth-player';
 import { PianoSynthPlayer } from '../player/piano-synth-player';
 declare var Vex: any;
 
@@ -75,12 +74,11 @@ export class ScalesComponent implements OnInit {
       this.vexFlowNotes.push(vexFlowNote);
     }
 
-    var noteIds: number[] = [];
+    var noteIds: number[][] = [];
     for(var i = 0; i < this.selectedScale.intervals.length; i++) {
-      noteIds.push(this.noteId + this.selectedScale.intervals[i]);
+      noteIds.push([this.noteId + this.selectedScale.intervals[i]]);
     }
-    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, false, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
-    //this.player = new PianoPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
+    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
 
     this.musicRenderer.resize(550, 120);
     this.renderScale();

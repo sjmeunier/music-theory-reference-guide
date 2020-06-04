@@ -37,6 +37,16 @@ export abstract class UILists {
         { key: 'blues-minor-pentatonic', value: 'Blues Minor' }
     ];
 
+    public static chordScaleList = [
+        { key: 'major', value: 'Major' },
+        { key: 'aeolian', value: 'Natural Minor' },
+        { key: 'dorian', value: 'Dorian' },
+        { key: 'phrygian', value: 'Phrygian' },
+        { key: 'lydian', value: 'Lydian' },
+        { key: 'mixolydian', value: 'Mixolydian' },
+        { key: 'locrian', value: 'Locrian' }
+    ];
+
     public static clefList = [
         { key: 'treble', value: 'Treble' },
         { key: 'bass', value: 'Bass' },
