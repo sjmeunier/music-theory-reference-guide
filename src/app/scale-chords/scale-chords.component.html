@@ -26,6 +26,14 @@
             </div>
         </div>
         <div class="row">
+                <div class="label">Type</div>
+                <div class="controls">
+                    <ul class="buttonlist scales">
+                        <li *ngFor="let item of chordGroupTypeList" [ngClass]="{'selected': item.key === chordGroupType}" (click)="selectChordGroupType(item.key)">{{item.value}}</li>
+                    </ul>
+                </div>
+            </div>
+        <div class="row">
             <div class="label">Clef</div>
             <div class="controls">
                 <ul class="buttonlist clef">

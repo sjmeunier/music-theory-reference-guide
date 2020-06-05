@@ -120,6 +120,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 4, 5, 7, 9, 11, 12],
             chords: {
                 'triads': ['major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad'],
+                'sevenths': ['major-seventh', 'minor-seventh', 'minor-seventh', 'major-seventh', 'major-seventh', 'minor-seventh', 'half-diminished-seventh'],
+                'ninths': ['major-ninth', 'minor-ninth', 'minor-seventh-flat-ninth', 'major-ninth', 'dominant-ninth', 'minor-ninth', 'half-dimished-seventh-flat-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'C', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -151,6 +153,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 3, 5, 7, 9, 10, 12],
             chords: {
                 'triads': ['minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad'],
+                'sevenths': ['minor-seventh', 'minor-seventh', 'major-seventh', 'major-seventh', 'minor-seventh', 'half-diminished-seventh', 'major-seventh'],
+                'ninths': ['minor-ninth', 'minor-seventh-flat-ninth', 'major-ninth', 'dominant-ninth', 'minor-ninth', 'half-dimished-seventh-flat-ninth', 'major-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'Bb', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -183,6 +187,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 1, 3, 5, 7, 8, 10, 12],
             chords: {
                 'triads': ['minor-triad', 'major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad'],
+                'sevenths': ['minor-seventh', 'major-seventh', 'major-seventh', 'minor-seventh', 'half-diminished-seventh', 'major-seventh', 'minor-seventh'],
+                'ninths': ['minor-seventh-flat-ninth', 'major-ninth', 'dominant-ninth', 'minor-ninth', 'half-dimished-seventh-flat-ninth', 'major-ninth', 'minor-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'Ab', notes: [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -215,6 +221,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 4, 6, 7, 9, 11, 12],
             chords: {
                 'triads': ['major-triad', 'major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad'],
+                'sevenths': ['major-seventh', 'major-seventh', 'minor-seventh', 'half-diminished-seventh', 'major-seventh', 'minor-seventh', 'minor-seventh'],
+                'ninths': ['major-ninth', 'dominant-ninth', 'minor-ninth', 'half-dimished-seventh-flat-ninth', 'major-ninth', 'minor-ninth', 'minor-seventh-flat-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'G', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -247,6 +255,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 4, 5, 7, 9, 10, 12],
             chords: {
                 'triads': ['major-triad', 'minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad'],
+                'sevenths': ['major-seventh', 'minor-seventh', 'half-diminished-seventh', 'major-seventh', 'minor-seventh', 'minor-seventh', 'major-seventh'],
+                'ninths': ['dominant-ninth', 'minor-ninth', 'half-dimished-seventh-flat-ninth', 'major-ninth', 'minor-ninth', 'minor-seventh-flat-ninth', 'major-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'F', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -279,7 +289,9 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 3, 5, 7, 8, 10, 12],
             chords: {
                 'triads': ['minor-triad', 'diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad'],
-            },
+                'sevenths': ['minor-seventh', 'half-diminished-seventh', 'major-seventh', 'minor-seventh', 'minor-seventh', 'major-seventh', 'major-seventh'],
+                'ninths': ['minor-ninth', 'half-dimished-seventh-flat-ninth', 'major-ninth', 'minor-ninth', 'minor-seventh-flat-ninth', 'major-ninth', 'dominant-ninth'],
+             },
             scaleNotes: {
                 'C': { keySignature: 'Eb', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
                 'C#': { keySignature: 'E', notes: [ { name: 'C#', octave: 0 }, { name: 'D#', octave: 0 }, { name: 'E', octave: 0 }, { name: 'F#', octave: 0 }, { name: 'G#', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C#', octave: 1 }] },
@@ -311,6 +323,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 3, 5, 7, 8, 11, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -342,6 +356,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 3, 5, 7, 9, 11, 12, 10, 8, 7, 5, 3, 2, 0],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'B', octave: 0 }, { name: 'C', octave: 1 }, { name: 'Bb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'G', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'D', octave: 0 }, { name: 'C', octave: 0 }] },
@@ -373,6 +389,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 1, 3, 5, 6, 8, 10, 12],
             chords: {
                 'triads': ['diminished-triad', 'major-triad', 'minor-triad', 'minor-triad', 'major-triad', 'major-triad', 'minor-triad'],
+                'sevenths': ['half-diminished-seventh', 'major-seventh', 'minor-seventh', 'minor-seventh', 'major-seventh', 'major-seventh', 'minor-seventh'],
+                'ninths': ['half-dimished-seventh-flat-ninth', 'major-ninth', 'minor-ninth', 'minor-seventh-flat-ninth', 'major-ninth', 'dominant-ninth', 'minor-ninth'],
             },
             scaleNotes: {
                 'C': { keySignature: 'Db', notes: [ { name: 'C', octave: 0 }, { name: 'Db', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Gb', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -405,6 +423,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 4, 7, 9, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'E', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -437,6 +457,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 5, 7, 10, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -469,6 +491,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 3, 5, 8, 10, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'Ab', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -501,6 +525,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 2, 5, 7, 9, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'D', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'A', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -533,6 +559,8 @@ export abstract class MusicDefinitions {
             intervals: [0, 3, 5, 7, 10, 12],
             chords: {
                 'triads': [],
+                'sevenths': [],
+                'ninths': [],
             },
             scaleNotes: {
                 'C': { keySignature: '', notes: [ { name: 'C', octave: 0 }, { name: 'Eb', octave: 0 }, { name: 'F', octave: 0 }, { name: 'G', octave: 0 }, { name: 'Bb', octave: 0 }, { name: 'C', octave: 1 }] },
@@ -589,6 +617,12 @@ export abstract class MusicDefinitions {
         'aug-maj-seventh': { name: 'Augmented major 7th', symbol: 'M7♯5', intervals: [0, 4, 8, 11], heptatonicNoteIndex: [0, 2, 4, 6]},
         'suspended-second': { name: 'Suspended 2nd', symbol: 'sus2', intervals: [0, 2, 7], heptatonicNoteIndex: [0, 1, 4]},
         'suspended-fourth': { name: 'Suspended 4th', symbol: 'sus4', intervals: [0, 5, 7], heptatonicNoteIndex: [0, 3, 4]},
-        'dominant-seventh-suspended-fourth': { name: 'Dom. 7th Sus. 4th', symbol: 'min', intervals: [0, 5, 7, 10], heptatonicNoteIndex: [0, 3, 4, 6]}
+        'dominant-seventh-suspended-fourth': { name: 'Dom. 7th Sus. 4th', symbol: 'min', intervals: [0, 5, 7, 10], heptatonicNoteIndex: [0, 3, 4, 6]},
+        'dominant-ninth': { name: 'Dominant 9th', symbol: '9', intervals: [0, 4, 7, 10, 14], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+        'dominant-minor-ninth': { name: 'Dominant Minor 9th', symbol: '7b9', intervals: [0, 3, 6, 10, 13], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+        'half-dimished-seventh-flat-ninth': { name: 'Minor 7th \u266D5th \u266D9th', symbol: 'm7b5b9', intervals: [0, 4, 7, 10, 13], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+        'minor-ninth': { name: 'Minor 9th', symbol: 'm9', intervals: [0, 3, 7, 10, 14], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+        'minor-seventh-flat-ninth': { name: 'Minor 7th \u266D5th', symbol: 'm9', intervals: [0, 3, 7, 10, 13], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+        'major-ninth': { name: 'Major 9th', symbol: 'M9', intervals: [0, 4, 7, 11, 14], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
     }
 }

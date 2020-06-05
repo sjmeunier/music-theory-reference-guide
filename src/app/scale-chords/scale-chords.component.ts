@@ -20,6 +20,7 @@ export class ScaleChordsComponent implements OnInit {
   public scaleList = UILists.chordScaleList;
   public clefList = UILists.clefList;
   public keySignatureList = UILists.keySignatureList;
+  public chordGroupTypeList = UILists.chordGroupList;
 
   public scaleRootBase: string;
   public scaleRootAccidental: string;
@@ -34,7 +35,7 @@ export class ScaleChordsComponent implements OnInit {
   private selectedScale: Scale;
   private baseNoteId: number;
   private noteId: number;
-  
+
   private musicRenderer: any; 
   private contextGroup: any = null;
   private vexFlowNotes: any[];
@@ -195,6 +196,11 @@ export class ScaleChordsComponent implements OnInit {
 
   public selectScale(scaleType: string) {
     this.scaleType = scaleType;
+    this.generateScale();
+  }
+
+  public selectChordGroupType(chordGroupType: string) {
+    this.chordGroupType = chordGroupType;
     this.generateScale();
   }
 

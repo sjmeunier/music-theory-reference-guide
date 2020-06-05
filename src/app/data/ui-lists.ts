@@ -75,6 +75,17 @@ export abstract class UILists {
         { key: 'aug-maj-seventh', value: 'Aug-maj. 7th' },
         { key: 'suspended-second', value: 'Suspended 2nd' },
         { key: 'suspended-fourth', value: 'Suspended 4th' },
-        { key: 'dominant-seventh-suspended-fourth', value: 'Dom. 7th, Sus 4th' }
+        { key: 'dominant-seventh-suspended-fourth', value: 'Dom. 7th, Sus 4th' },
+        { key: 'dominant-minor-ninth', value: 'Dominant minor 9th' },
+        { key: 'minor-ninth', value: 'Minor 9th' },
+        { key: 'major-ninth', value: 'Major 9th' },
+        { key: 'minor-seventh-flat-ninth', value: 'Minor 7th \u266D5th' },
+        { key: 'half-dimished-seventh-flat-ninth', value: 'Minor 7th Flat 5th Flat 9th' },
+    ];
+
+    public static chordGroupList = [
+        { key: 'triads', value: 'Triads' },
+        { key: 'sevenths', value: 'Sevenths' },
+        { key: 'ninths', value: 'Ninths' },
     ];
 }
