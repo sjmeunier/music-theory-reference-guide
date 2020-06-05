@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Piano</h2>
+    <div class="piano">
+        <div class="key" *ngFor="let key of keyList, let index = index" [attr.id]="'key' + index" [ngClass]="{'black': key.accidental.length > 0}" (click)="playNote(index)" [ngStyle]="{'left': key.left}">
+            <div class="note-name">{{key.name}}{{key.octave}}{{key.accidental}}</div>
+            <div class="note-key">{{key.keyName}}</div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="label">Octave</div>
+            <div class="controls">
+                <ul class="buttonlist key">
+                    <li *ngFor="let item of octaveList" [ngClass]="{'selected': item.key === startOctave}" (click)="selectStartOctave(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

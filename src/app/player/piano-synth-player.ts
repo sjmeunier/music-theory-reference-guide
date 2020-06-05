@@ -1,6 +1,5 @@
 import { MusicDefinitions } from '../data/music-definitions';
 
-declare var Synth: any;
 declare var AudioSynth: any;
 
 export class PianoSynthPlayer {
