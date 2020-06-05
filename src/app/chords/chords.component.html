@@ -1,37 +1,37 @@
 <div class="container">
-        <h2>Chords</h2>
-        <div class="music">
-            <div id="scaleMusic" class="stave"></div>
+    <h2>Chords</h2>
+    <div class="music">
+        <div id="scaleMusic" class="stave"></div>
+        <div class="controls">
+            <button (click)="play()"><i class="far fa-play-circle"></i></button>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="label">Key</div>
             <div class="controls">
-                <button (click)="play()"><i class="far fa-play-circle"></i></button>
+                <ul class="buttonlist key">
+                    <li *ngFor="let item of rootBaseNoteList" [ngClass]="{'selected': item.key === chordRootBase}" (click)="selectRootBase(item.key)">{{item.value}}</li>
+                    <li class="spacer"></li>
+                    <li *ngFor="let item of rootAccidentalList" [ngClass]="{'selected': item.key === chordRootAccidental}" (click)="selectRootAccidental(item.key)">{{item.value}}</li>
+                </ul>
             </div>
         </div>
-        <div class="grid">
-            <div class="row">
-                <div class="label">Key</div>
-                <div class="controls">
-                    <ul class="buttonlist key">
-                        <li *ngFor="let item of rootBaseNoteList" [ngClass]="{'selected': item.key === chordRootBase}" (click)="selectRootBase(item.key)">{{item.value}}</li>
-                        <li class="spacer"></li>
-                        <li *ngFor="let item of rootAccidentalList" [ngClass]="{'selected': item.key === chordRootAccidental}" (click)="selectRootAccidental(item.key)">{{item.value}}</li>
-                    </ul>
-                </div>
+        <div class="row">
+            <div class="label">Chord</div>
+            <div class="controls">
+                <ul class="buttonlist chords">
+                    <li *ngFor="let item of chordTypeList" [ngClass]="{'selected': item.key === chordType}" (click)="selectChordType(item.key)">{{item.value}}</li>
+                </ul>
             </div>
-            <div class="row">
-                <div class="label">Chord</div>
-                <div class="controls">
-                    <ul class="buttonlist chords">
-                        <li *ngFor="let item of chordTypeList" [ngClass]="{'selected': item.key === chordType}" (click)="selectChordType(item.key)">{{item.value}}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="label">Clef</div>
-                <div class="controls">
-                    <ul class="buttonlist clef">
-                        <li *ngFor="let item of clefList" [ngClass]="{'selected': item.key === chordClef}" (click)="selectClef(item.key)">{{item.value}}</li>
-                    </ul>
-                </div>
+        </div>
+        <div class="row">
+            <div class="label">Clef</div>
+            <div class="controls">
+                <ul class="buttonlist clef">
+                    <li *ngFor="let item of clefList" [ngClass]="{'selected': item.key === chordClef}" (click)="selectClef(item.key)">{{item.value}}</li>
+                </ul>
             </div>
         </div>
     </div>
+</div>

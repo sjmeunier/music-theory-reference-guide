@@ -7,6 +7,7 @@ import { InstrumentRangesComponent } from './instrument-ranges/instrument-ranges
 import { TerminologyComponent } from './terminology/terminology.component';
 import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.component';
 import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
+import { IntervalsComponent } from './intervals/intervals.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'instrument-ranges', component: InstrumentRangesComponent },
   { path: 'terminology', component: TerminologyComponent },
   { path: 'circle-of-fifths', component: CircleOfFifthsComponent },
-  { path: 'scale-chords', component: ScaleChordsComponent }
+  { path: 'scale-chords', component: ScaleChordsComponent },
+  { path: 'intervals', component: IntervalsComponent }
 ];
 
 @NgModule({

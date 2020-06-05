@@ -10,6 +10,7 @@ import { InstrumentRangesComponent } from './instrument-ranges/instrument-ranges
 import { TerminologyComponent } from './terminology/terminology.component';
 import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.component';
 import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
+import { IntervalsComponent } from './intervals/intervals.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
     InstrumentRangesComponent,
     TerminologyComponent,
     CircleOfFifthsComponent,
-    ScaleChordsComponent
+    ScaleChordsComponent,
+    IntervalsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { PlayableNote, Scale, Clef} from '.';
+import { PlayableNote, Scale, Clef, Interval} from '.';
 import { Chord } from './chord.interface';
 
 export abstract class MusicDefinitions {
@@ -624,5 +624,27 @@ export abstract class MusicDefinitions {
         'minor-ninth': { name: 'Minor 9th', symbol: 'm9', intervals: [0, 3, 7, 10, 14], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
         'minor-seventh-flat-ninth': { name: 'Minor 7th \u266D5th', symbol: 'm9', intervals: [0, 3, 7, 10, 13], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
         'major-ninth': { name: 'Major 9th', symbol: 'M9', intervals: [0, 4, 7, 11, 14], heptatonicNoteIndex: [0, 2, 4, 6, 8] },
+    }
+
+    public static intervals: { [id:string]: Interval; } = {
+        'perfect-unison': { name: 'Perfect unison', symbol: 'P1', intervals: [0, 0]},
+        'minor-second': { name: 'Minor 2nd', symbol: 'm2', intervals: [0, 1]},
+        'major-second': { name: 'Major 2nd', symbol: 'M2', intervals: [0, 2]},
+        'minor-third': { name: 'Minor 3rd', symbol: 'm3', intervals: [0, 3]},
+        'major-third': { name: 'Major 3rd', symbol: 'M3', intervals: [0, 4]},
+        'perfect-fourth': { name: 'Perfect 4th', symbol: 'P4', intervals: [0, 5]},
+        'tritone': { name: 'Tritone', symbol: 'TT', intervals: [0, 6]},
+        'perfect-fifth': { name: 'Perfect 5th', symbol: 'P5', intervals: [0, 7]},
+        'minor-sixth': { name: 'Minor 6th', symbol: 'm6', intervals: [0, 8]},
+        'major-sixth': { name: 'Major 6th', symbol: 'M6', intervals: [0, 9]},
+        'minor-seventh': { name: 'Minor 7th', symbol: 'm7', intervals: [0, 10]},
+        'major-seventh': { name: 'Major 7th', symbol: 'M7', intervals: [0, 11]},
+        'perfect-octave': { name: 'Perfect Octave', symbol: 'P8', intervals: [0, 12]},
+        'minor-ninth': { name: 'Minor 9th', symbol: 'm9', intervals: [0, 13]},
+        'major-ninth': { name: 'Major 9th', symbol: 'M9', intervals: [0, 14]},
+        'minor-eleventh': { name: 'Minor 11th', symbol: 'm11', intervals: [0, 17]},
+        'major-eleventh': { name: 'Major 11th', symbol: 'M11', intervals: [0, 18]},
+        'minor-thirteenth': { name: 'Minor 13th', symbol: 'm13', intervals: [0, 21]},
+        'major-thirteenth': { name: 'Major 13th', symbol: 'M13', intervals: [0, 22]},
     }
 }

@@ -88,4 +88,31 @@ export abstract class UILists {
         { key: 'sevenths', value: 'Sevenths' },
         { key: 'ninths', value: 'Ninths' },
     ];
+
+    public static noteGroupingList = [
+        { key: 'single', value: 'Single' },
+        { key: 'chord', value: 'Chord' },
+    ];
+    
+    public static intervalsList = [
+        { key: 'perfect-unison', value: 'Perfect unison' },
+        { key: 'minor-second', value: 'Minor 2nd' },
+        { key: 'major-second', value: 'Major 2nd' },
+        { key: 'minor-third', value: 'Minor 3rd' },
+        { key: 'major-third', value: 'Major 3rd' },
+        { key: 'perfect-fourth', value: 'Perfect 4th' },
+        { key: 'tritone', value: 'Tritone' },
+        { key: 'perfect-fifth', value: 'Perfect 5th' },
+        { key: 'minor-sixth', value: 'Minor 6th' },
+        { key: 'major-sixth', value: 'Major 6th' },
+        { key: 'minor-seventh', value: 'Minor 7th' },
+        { key: 'major-seventh', value: 'Major 7th' },
+        { key: 'perfect-octave', value: 'Perfect octave' },
+        { key: 'minor-ninth', value: 'Minor 9th' },
+        { key: 'major-ninth', value: 'Major 9th' },
+        { key: 'minor-eleventh', value: 'Minor 11th' },
+        { key: 'major-eleventh', value: 'Major 11th' },
+        { key: 'minor-thirteenth', value: 'Minor 13th' },
+        { key: 'major-thirteenth', value: 'Major 13th' },
+    ];
 }

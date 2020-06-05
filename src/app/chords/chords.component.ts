@@ -89,7 +89,7 @@ export class ChordsComponent implements OnInit {
       chordNoteIds.push(this.noteId + this.selectedChord.intervals[i]);
     }
     noteIds.push(chordNoteIds);
-    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, null, null, this);
+    this.player = new PianoSynthPlayer(noteIds, this.noteDuration, this.setActiveNoteStyleCallback, this.setStandardNoteStyleCallback, this);
 
     this.musicRenderer.resize(150, 120);
     this.renderChord();
@@ -122,6 +122,21 @@ export class ChordsComponent implements OnInit {
 
   public play() {
     this.player.play();
+  }
+
+  //The calling context in these callback functions is a bit of hack to regain the local context (this)
+  //Otherwise the method gets executed in the context of whichever class is calling the function
+  private setActiveNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
+    callingContext.setNoteStyle(vexFlowNoteIndex, 'blue');
+  }
+
+  private setStandardNoteStyleCallback = function(vexFlowNoteIndex: number, callingContext: any) {
+    callingContext.setNoteStyle(vexFlowNoteIndex, 'black');
+  }
+
+  private setNoteStyle = function (vexFlowNoteIndex: number, color: string) {
+    this.vexFlowNotes[vexFlowNoteIndex].setStyle({fillStyle: color, strokeStyle: color});
+    this.renderChord();
   }
 
   private setChordRoot()

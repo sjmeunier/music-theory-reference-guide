@@ -13,6 +13,7 @@ export class AppComponent {
 
   public navRoutes: any[] = [
     { route: '/home', text: 'Home'},
+    { route: '/intervals', text: 'Intervals'},
     { route: '/scales', text: 'Scales'},
     { route: '/chords', text: 'Chords'},
     { route: '/scale-chords', text: 'Scale Chords'},
