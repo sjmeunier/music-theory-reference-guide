@@ -19,6 +19,7 @@ export class AppComponent {
     { route: '/scale-chords', text: 'Scale Chords'},
     { route: '/circle-of-fifths', text: 'Circle of Fifths'},
     { route: '/terminology', text: 'Terminology'},
+    { route: '/sheet-music', text: 'Sheet Music'},
     { route: '/piano', text: 'Piano'},
   ]
   public getRoute = function() {

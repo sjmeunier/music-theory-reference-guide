@@ -12,6 +12,7 @@ import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.com
 import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
 import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
+import { SheetMusicComponent } from './sheet-music/sheet-music.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PianoComponent } from './piano/piano.component';
     CircleOfFifthsComponent,
     ScaleChordsComponent,
     IntervalsComponent,
-    PianoComponent
+    PianoComponent,
+    SheetMusicComponent
   ],
   imports: [
     BrowserModule,

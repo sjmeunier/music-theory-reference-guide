@@ -161,6 +161,12 @@ button:focus {
     text-align: center;
 }
 
+.content .container h4 {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
 .content .container p {
     margin-top: 0.3em;
 }
