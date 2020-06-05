@@ -63,6 +63,8 @@ export class PianoComponent implements OnInit {
     { code: 190, value: '.'},  //B
   ]
 
+  private activeKeys: { [code: number]: number; };
+
   private whiteKeyWidth: number = 28;
   private blackKeyOffset: number = -10;
 
@@ -80,27 +82,33 @@ export class PianoComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    for(var i = 0; i < this.keyList.length; i++) {
-      if (this.keyList[i].keyBinding === event.keyCode) {
-        this.synth.play(0, this.keyList[i].name + this.keyList[i].accidental, this.keyList[i].octave, 2);
+    if (!(event.keyCode in this.activeKeys)) {
+      for(var i = 0; i < this.keyList.length; i++) {
+        if (this.keyList[i].keyBinding === event.keyCode) {
+          this.activeKeys[event.keyCode] = i;
+          this.synth.play(0, this.keyList[i].name + this.keyList[i].accidental, this.keyList[i].octave, 2);
 
-        var pressedKey = document.getElementById("key" + i);
-        pressedKey.classList.add('pressed');
-        break;
+          var pressedKey = document.getElementById("key" + i);
+          pressedKey.classList.add('pressed');
+          break;
+        }
       }
     }
   }
 
   @HostListener('window:keyup', ['$event'])
   keyUp(event: KeyboardEvent) {
-    for(var i = 0; i < this.keyList.length; i++) {
-      var key = document.getElementById("key" + i);
+    if (event.keyCode in this.activeKeys) {
+      var key = document.getElementById("key" + this.activeKeys[event.keyCode]);
       key.classList.remove('pressed');
+      delete(this.activeKeys[event.keyCode]);
     }
   }
 
   private setKeys() {
     this.keyList = [];
+    this.activeKeys = {};
+
     let octave: number = this.startOctave;
     let currentXOffset = 0;
     let index: number = 0;
