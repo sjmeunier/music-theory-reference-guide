@@ -11,7 +11,7 @@
                 </div>
             </div>
         <div class="grid">
-            <div class="row music-definition" *ngFor="let item of groupDefinitions[selectedGroup].definitions">
+            <div class="row music-definition" *ngFor="let item of selectedGroupDefinition.definitions">
                 <div class="image">
                     <img src={{item.imagePath}} [ngStyle]="{ 'height': item.imageHeight + 'px', 'margin-top': item.imageMargins + 'px', 'margin-bottom': item.imageMargins + 'px' }" />
                 </div>
