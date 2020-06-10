@@ -12,7 +12,7 @@ import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.com
 import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
 import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
-import { SheetMusicComponent } from './sheet-music/sheet-music.component';
+import { MusicNotationComponent } from './music-notation/music-notation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { SheetMusicComponent } from './sheet-music/sheet-music.component';
     ScaleChordsComponent,
     IntervalsComponent,
     PianoComponent,
-    SheetMusicComponent
+    MusicNotationComponent
   ],
   imports: [
     BrowserModule,

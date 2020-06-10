@@ -38,7 +38,7 @@ export class TerminologyComponent implements OnInit {
     { term: 'Poco a Poco', definition: 'Little by little' }
   ];
 
-  public volumeTerms = [
+  public dynamicsTerms = [
     { term: 'Pianissimo', definition: 'Very soft' },
     { term: 'Piano', definition: 'Soft' },
     { term: 'Mezzo Piano', definition: 'Moderately soft' },
@@ -47,8 +47,12 @@ export class TerminologyComponent implements OnInit {
     { term: 'Fortissimo', definition: 'Very loud' },
     { term: 'Diminuendo', definition: 'Gradually getting softer' },
     { term: 'Crescendo', definition: 'Gradually getting louder' },
-    { term: 'Sforzando', definition: 'A strongly accentted note' },
-    { term: 'Subito', definition: 'Suddenly' }
+    { term: 'Sforzando', definition: 'A strongly accented note' },
+    { term: 'Subito', definition: 'Suddenly' },
+    { term: 'Staccato', definition: 'Played with quick key stroke, and not holding the note to blend with next note' },
+    { term: 'Accent', definition: 'Note should be accented' },
+    { term: 'Teneto', definition: 'Note should be held for full length' },
+    { term: 'Fermata', definition: 'Note should be held longer than the full length' },
   ];
 
   public cadenceTerms = [
@@ -70,7 +74,7 @@ export class TerminologyComponent implements OnInit {
   ];
   
   public categoryList = [
-    { key: 'volume', value: 'Volume'},
+    { key: 'dynamics', value: 'Dynamics'},
     { key: 'tempo', value: 'Tempo'},
     { key: 'cadences', value: 'Cadences'},
     { key: 'scale-degrees', value: 'Scale Degrees'},
@@ -86,8 +90,8 @@ export class TerminologyComponent implements OnInit {
   public selectCategory(selectedCategory: string) {
     this.selectedCategory = selectedCategory;
 
-    if (this.selectedCategory == 'volume') {
-      this.selectedTerms = this.volumeTerms;
+    if (this.selectedCategory == 'dynamics') {
+      this.selectedTerms = this.dynamicsTerms;
     } else if (this.selectedCategory == 'tempo') {
       this.selectedTerms = this.tempoTerms;
     } else if (this.selectedCategory == 'cadences') {

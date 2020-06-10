@@ -373,3 +373,22 @@ button:focus {
     border: #000;
     color: #fff;
 }
+
+.music-definition .image {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.music-definition {
+    margin-bottom: 40px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.music-definition .definition {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.music-definition .definition .name {
+    font-weight: bold;
+}

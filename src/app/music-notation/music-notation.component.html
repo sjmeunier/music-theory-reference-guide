@@ -1,0 +1,21 @@
+<div class="container">
+        <h2>Sheet Music Reference</h2>
+
+        <div class="grid">
+                <div class="row">
+                    <div class="controls">
+                        <ul class="buttonlist">
+                            <li *ngFor="let item of groupList" [ngClass]="{'selected': item.key === selectedGroup}" (click)="selectGroup(item.key)">{{item.value}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="grid">
+            <div class="row music-definition" *ngFor="let item of groupDefinitions[selectedGroup].definitions">
+                <div class="image">
+                    <img src={{item.imagePath}} [ngStyle]="{ 'height': item.imageHeight + 'px', 'margin-top': item.imageMargins + 'px', 'margin-bottom': item.imageMargins + 'px' }" />
+                </div>
+                <div class="definition"><div class="name">{{item.name}}</div><div class="description">{{item.description}}</div></div>
+            </div>
+        </div>
+    </div>

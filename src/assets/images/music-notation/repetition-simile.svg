@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2"
+   version="1.1"
+   width="600"
+   height="300.99667">
+  <g
+     id="g3048"
+     transform="translate(-2945,375.99669)" />
+  <g
+     id="layer1"
+     transform="translate(-2945,375.99669)" />
+  <g
+     id="layer2"
+     transform="translate(-2945,375.99669)" />
+  <g
+     id="g3970"
+     transform="matrix(0.3986711,0,0,0.3986711,-502.32559,277.07641)">
+    <rect
+       y="-695"
+       x="1265"
+       height="35"
+       width="1500"
+       id="rect3907"
+       style="fill:#bebebe;fill-opacity:1" />
+    <rect
+       y="-508.72513"
+       x="1267.507"
+       height="25.889503"
+       width="1492.5157"
+       id="rect3909"
+       style="fill:#bebebe;fill-opacity:1" />
+    <rect
+       y="-510"
+       x="1265"
+       height="30"
+       width="1500"
+       id="rect3914"
+       style="fill:#bebebe;fill-opacity:1" />
+    <rect
+       style="fill:#bebebe;fill-opacity:1"
+       id="rect3916"
+       width="1500"
+       height="30"
+       x="1260"
+       y="-330" />
+    <rect
+       y="-140"
+       x="1260"
+       height="30"
+       width="1500"
+       id="rect3918"
+       style="fill:#bebebe;fill-opacity:1" />
+    <rect
+       style="fill:#bebebe;fill-opacity:1"
+       id="rect3920"
+       width="1500"
+       height="30"
+       x="1260"
+       y="30" />
+    <g
+       id="g3960">
+      <path
+         style="fill:#000000;fill-opacity:1"
+         id="path3892"
+         d="m 1440.1036,-413.2576 a 43.688538,45.845993 0 1 1 -87.3771,0 43.688538,45.845993 0 1 1 87.3771,0 z"
+         transform="matrix(1.1233778,0,0,1.0705129,565.56088,25.907257)" />
+      <path
+         id="path3903"
+         d="m 2355,-504.99999 135,-4e-5 L 2180,-130 l -131.705,1e-5 306.705,-375 z"
+         style="fill:#000000;fill-opacity:1" />
+      <path
+         transform="matrix(1.1233778,0,0,1.0705129,1068.2487,235.18074)"
+         d="m 1440.1036,-413.2576 a 43.688538,45.845993 0 1 1 -87.3771,0 43.688538,45.845993 0 1 1 87.3771,0 z"
+         id="path3894"
+         style="fill:#000000;fill-opacity:1"/>
+      <rect
+         style="fill:#000000;fill-opacity:1"
+         id="rect3896"
+         width="34.519337"
+         height="718.43372"
+         x="2362.417"
+         y="-677.0069" />
+      <path
+         style="fill:#000000;fill-opacity:1"
+         d="m 2603.2362,-504.31492 135,-4e-5 -310,375.00003 -131.705,1e-5 306.705,-375 z"
+         id="path3905"/>
+      <path
+         transform="matrix(0.76093644,0.64882643,-0.64882643,0.76093644,0,0)"
+         style="fill:#000000;fill-opacity:1"
+         d="m 901.255,-1432.1276 102.7264,-87.5916 7.4196,486.4874 -100.21909,85.45367 -9.92691,-484.34947 z"
+         id="rect3900"/>
+      <path
+         style="fill:#000000;fill-opacity:1"
+         id="path3886"
+         d="m 1440.1036,-413.2576 a 43.688538,45.845993 0 1 1 -87.3771,0 43.688538,45.845993 0 1 1 87.3771,0 z"
+         transform="matrix(1.1233778,0,0,1.0705129,-173.36868,25.907258)" />
+      <path
+         transform="matrix(1.1233778,0,0,1.0705129,94.156182,230.86582)"
+         d="m 1440.1036,-413.2576 a 43.688538,45.845993 0 1 1 -87.3771,0 43.688538,45.845993 0 1 1 87.3771,0 z"
+         id="path3890"
+         style="fill:#000000;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

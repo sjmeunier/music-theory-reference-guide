@@ -9,7 +9,7 @@ import { CircleOfFifthsComponent } from './circle-of-fifths/circle-of-fifths.com
 import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
 import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
-import { SheetMusicComponent } from './sheet-music/sheet-music.component';
+import { MusicNotationComponent } from './music-notation/music-notation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'scale-chords', component: ScaleChordsComponent },
   { path: 'intervals', component: IntervalsComponent },
   { path: 'piano', component: PianoComponent },
-  { path: 'sheet-music', component: SheetMusicComponent }
+  { path: 'music-notation', component: MusicNotationComponent }
 ];
 
 @NgModule({

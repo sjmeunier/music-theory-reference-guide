@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="209px" height="122px">
+		<line fill="none" stroke="#BFBFBF" stroke-width="4" stroke-miterlimit="10" x1="5" y1="16" x2="204" y2="16"/>
+		<line fill="none" stroke="#BFBFBF" stroke-width="4" stroke-miterlimit="10" x1="5" y1="40" x2="204" y2="40"/>
+		<line fill="none" stroke="#BFBFBF" stroke-width="4" stroke-miterlimit="10" x1="5" y1="64" x2="204" y2="64"/>
+		<line fill="none" stroke="#BFBFBF" stroke-width="4" stroke-miterlimit="10" x1="5" y1="88" x2="204" y2="88"/>
+		<line fill="none" stroke="#BFBFBF" stroke-width="4" stroke-miterlimit="10" x1="5" y1="112" x2="204" y2="112"/>
+			<path d="M116,90.75c-1.665-1.572-4.381-1.922-7.619-1.922c-3.7,0-8.14,1.85-11.654,4.718c-3.516,2.774-6.105,6.567-6.105,10.36
+				c0,2.404,1.018,4.439,2.775,5.826c1.665,1.389,4.07,2.221,6.66,2.221c4.07,0,8.695-1.665,12.209-4.439
+				c3.607-2.775,5.984-6.602,5.984-10.764V15.5H116V90.75z"/>
+		<polygon points="131.5,37 103.75,51.25 103.75,44.5 131.5,30.25 		"/>
+		<polygon points="131.5,49.25 103.75,63.5 103.75,56.75 131.5,42.5 		"/>
+		<polygon points="131.5,61.5 103.75,75.75 103.75,69 131.5,54.75 		"/>
+</svg>

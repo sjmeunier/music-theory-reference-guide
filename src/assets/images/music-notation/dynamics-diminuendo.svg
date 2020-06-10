@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="clip"><rect x="20" height="200" width="200" /></clipPath></defs>
+<polyline points="16,58 159.5,101.3 16,144" fill="none" stroke="#000" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter" clip-path="url(#clip)" />
+</svg>

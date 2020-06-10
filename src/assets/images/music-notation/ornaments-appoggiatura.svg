@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="200"
+   height="200">
+  <g style="fill:none;stroke:#000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.25;stroke-dasharray:none">
+    <path d="m 0,52 200,0" />
+    <path d="m 0,76 200,0" />
+    <path d="m 0,100 200,0" />
+    <path d="m 0,124 200,0" />
+    <path d="m 0,148 200,0" />
+  </g>
+  <path
+     d="m 73.008775,60.169634 c 7.168292,6.015045 16.773882,7.503681 27.223615,7.424621"
+     id="path4792"
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="m 106.1,147.9 -2,0 0,-81 c 0,-4.1 2.9,-6.9 5.5,-9.3 4.1,-3.6 8.8,-4.7 14,-4.7 6.4,0 9.5,3.4 9.5,7.6 -0.2,8.6 -12.3,15.9 -19.6,15.7-2.7,-0.1 -6.1,-1.5 -7.4,-2 z"
+     style="fill:#000000;fill-opacity:1;stroke:none" />
+  <path
+     d="m 79,9 1,0 c 0.1,11.2 12,13.4 12,24.6 0,5.9 -2.4,9.1 -4.5,12.1 1.3,-3.8 2.5,-7.5 2.5,-11.8 0,-6.9 -5.3,-11.2 -10,-11.7 l 0,27.9 c 0,2 -1.4,3.4 -2.6,4.4 -1.9,1.7 -4.2,2.2 -6.6,2.2 -3,0 -4.5,-1.6 -4.5,-3.6 0.1,-4.1 5.8,-7.5 9.3,-7.4 1.3,0 2.8,0.7 3.4,1 z"
+     style="fill:#000000;fill-opacity:1;stroke:none" />
+</svg>
