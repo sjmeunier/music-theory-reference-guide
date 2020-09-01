@@ -1,8 +1,17 @@
 <div class="container">
     <h2>Instrument Ranges</h2>
     <div>These instrument ranges show the ranges of the instruments based on the actual sounding. Some instruments are transposing instruments, so are not usually written at the same pitch as they sound.</div>
-    <div id="instrumentRanges"></div>
-    <canvas id="instrumentRangeCanvas" width="580" height="490"
-    style="border: 1px solid black;">
-</canvas>
+    <div class="grid">
+        <div class="row">
+            <div class="controls">
+                <ul class="buttonlist">
+                    <li *ngFor="let item of categoryList" [ngClass]="{'selected': item.key === selectedCategory}" (click)="selectCategory(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <canvas id="instrumentRangeCanvas" width="590" height="490">
+        </canvas>
+    </div>
 </div>

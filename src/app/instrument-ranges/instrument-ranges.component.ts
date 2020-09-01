@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstrumentDefinitions } from '../data/instrument-definitions';
+import { InstrumentRange } from '../data/.';
+
 @Component({
   selector: 'app-instrument-ranges',
   templateUrl: './instrument-ranges.component.html',
@@ -8,22 +10,63 @@ import { InstrumentDefinitions } from '../data/instrument-definitions';
 export class InstrumentRangesComponent implements OnInit {
 
   private xOffset: number = 140.5;
-  private yOffset: number = 50.5;
+  private yOffset: number = 20.5;
   private chartWidth: number = 500;
   private rowHeight: number = 20;
   private colWidth: number = 4;
 
+  public categoryList = [
+    { key: 'strings', value: 'Strings'},
+    { key: 'woodwind', value: 'Woodwind'},
+    { key: 'brass', value: 'Brass'},
+    { key: 'percussion', value: 'Percussion'},
+    { key: 'folk', value: 'Folk'},
+    { key: 'all', value: 'All'},
+  ]
+
+  private selectedInstruments: InstrumentRange[];
+
+  public selectedCategory: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedCategory = 'strings';
+    this.setSelectedInstruments();
+    this.drawChart();
+  }
+
+  public selectCategory(selectedCategory: string) {
+    this.selectedCategory = selectedCategory;
+    this.setSelectedInstruments();
+    this.drawChart();
+  }
+
+  private setSelectedInstruments() {
+    if (this.selectedCategory === 'all') {
+      this.selectedInstruments = InstrumentDefinitions.instrumentRanges['strings'].concat(
+        InstrumentDefinitions.instrumentRanges['woodwind'],
+        InstrumentDefinitions.instrumentRanges['brass'],
+        InstrumentDefinitions.instrumentRanges['percussion'],
+        InstrumentDefinitions.instrumentRanges['folk']
+      );
+    } else {
+      this.selectedInstruments = InstrumentDefinitions.instrumentRanges[this.selectedCategory];
+    }
+  }
+
+  private drawChart() {
     let canvas = document.getElementById('instrumentRangeCanvas') as HTMLCanvasElement;
     let context = canvas.getContext("2d");
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.lineCap = 'round';
     context.lineWidth = 1;
 
-    let chartHeight = (this.rowHeight * InstrumentDefinitions.instrumentRanges.length) + 4;
+    let chartHeight = (this.rowHeight * this.selectedInstruments.length) + 4;
 
+    canvas.height = chartHeight + this.yOffset + 10;
 
     //Draw grid lines
     let currentXOffset = this.xOffset;
@@ -87,20 +130,25 @@ export class InstrumentRangesComponent implements OnInit {
     }
 
     let currentYOffset = this.yOffset + 2;
-    for(let i = 0; i < InstrumentDefinitions.instrumentRanges.length; i++) {
+    for(let i = 0; i < this.selectedInstruments.length; i++) {
       context.fillStyle = '#33339988';
       context.strokeStyle = '#000066';
-      let startX:number = this.xOffset + (this.getNoteNumber(InstrumentDefinitions.instrumentRanges[i].rangeStart) * this.colWidth) + 0.5;
-      let endX:number = this.xOffset + (this.getNoteNumber(InstrumentDefinitions.instrumentRanges[i].rangeEnd) * this.colWidth) - 0.5;
+      let startX:number = this.xOffset + (this.getNoteNumber(this.selectedInstruments[i].rangeStart) * this.colWidth) + 0.5;
+      let endX:number = this.xOffset + (this.getNoteNumber(this.selectedInstruments[i].rangeEnd) * this.colWidth) - 0.5;
       
       context.fillRect(startX, currentYOffset + 0.5, endX - startX, this.rowHeight - 2);
 
       context.fillStyle = 'black';
-      context.fillText(InstrumentDefinitions.instrumentRanges[i].name, this.xOffset - 130, currentYOffset + this.rowHeight - 6);
+      context.fillText(this.selectedInstruments[i].name, this.xOffset - 130, currentYOffset + this.rowHeight - 7);
 
+      context.fillStyle = '#fafafa';
+      context.fillText(this.selectedInstruments[i].rangeStart, startX + 2, currentYOffset + this.rowHeight - 7);
+
+      let rightTextMeasure = context.measureText(this.selectedInstruments[i].rangeEnd);
+      context.fillText(this.selectedInstruments[i].rangeEnd, endX - rightTextMeasure.width - 2, currentYOffset + this.rowHeight - 7);
+      
       currentYOffset += this.rowHeight;
     }
-
   }
 
   private getNoteNumber(note: string)

@@ -20,6 +20,7 @@ export class AppComponent {
     { route: '/circle-of-fifths', text: 'Circle of Fifths'},
     { route: '/terminology', text: 'Terminology'},
     { route: '/music-notation', text: 'Music Notation'},
+    { route: '/instrument-ranges', text: 'Instrument Ranges'},
     { route: '/piano', text: 'Piano'},
   ]
   public getRoute = function() {
