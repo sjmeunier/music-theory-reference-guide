@@ -84,7 +84,7 @@ export class TerminologyComponent implements OnInit {
   public selectedTerms: any[];
 
   ngOnInit(): void {
-    this.selectCategory('volume');
+    this.selectCategory('dynamics');
   }
 
   public selectCategory(selectedCategory: string) {
