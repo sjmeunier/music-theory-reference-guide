@@ -12,7 +12,8 @@ export abstract class InstrumentDefinitions {
             { name: 'Cello', rangeStart: 'C2', rangeEnd: 'C6' },
             { name: 'Double Bass', rangeStart: 'C1', rangeEnd: 'C4' },
             { name: 'Guitar', rangeStart: 'E2', rangeEnd: 'E5' },
-            { name: 'Bass Guitar', rangeStart: 'E1', rangeEnd: 'E4' },
+            { name: 'Bass Guitar (4 String)', rangeStart: 'E1', rangeEnd: 'E4' },
+            { name: 'Bass Guitar (5 String)', rangeStart: 'B0', rangeEnd: 'E4' },
         ],
         'woodwind': [
             { name: 'Piccolo (C)', rangeStart: 'D5', rangeEnd: 'C8' },
@@ -34,6 +35,10 @@ export abstract class InstrumentDefinitions {
             { name: 'Tenor Saxophone (Bb)', rangeStart: 'Ab2', rangeEnd: 'E5' },
             { name: 'Baritone Saxophone (Bb)', rangeStart: 'Db2', rangeEnd: 'Ab4' },
             { name: 'Bass Saxophone (Bb)', rangeStart: 'Ab1', rangeEnd: 'E4' },
+            { name: 'Soprano Recorder (C)', rangeStart: 'C5', rangeEnd: 'C7' },
+            { name: 'Alto Recorder (C)', rangeStart: 'F4', rangeEnd: 'G6' },
+            { name: 'Tenor Recorder (C)', rangeStart: 'C4', rangeEnd: 'B5' },
+            { name: 'Bass Recorder (C)', rangeStart: 'F3', rangeEnd: 'C5' },
         ],
         'brass': [
             { name: 'Horn (F)', rangeStart: 'B1', rangeEnd: 'F5' },
@@ -68,6 +73,14 @@ export abstract class InstrumentDefinitions {
             { name: 'Soprano Ocarina (C)', rangeStart: 'C6', rangeEnd: 'F7' },
             { name: 'Alto Ocarina (C)', rangeStart: 'C5', rangeEnd: 'F6' },
             { name: 'Bass Ocarina (C)', rangeStart: 'C4', rangeEnd: 'F5' },
+        ],
+        'vocal': [
+            { name: 'Soprano (Vocal)', rangeStart: 'B3', rangeEnd: 'G6' },
+            { name: 'Mezzo-soprano (Vocal)', rangeStart: 'G3', rangeEnd: 'A5' },
+            { name: 'Alto (Vocal)', rangeStart: 'E3', rangeEnd: 'F5' },
+            { name: 'Tenor (Vocal)', rangeStart: 'C3', rangeEnd: 'B4' },
+            { name: 'Baritone (Vocal)', rangeStart: 'G2', rangeEnd: 'G4' },
+            { name: 'Bass (Vocal)', rangeStart: 'D2', rangeEnd: 'E4' },
         ]
     };
 }

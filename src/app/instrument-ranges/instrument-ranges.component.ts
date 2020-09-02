@@ -21,6 +21,7 @@ export class InstrumentRangesComponent implements OnInit {
     { key: 'brass', value: 'Brass'},
     { key: 'percussion', value: 'Percussion'},
     { key: 'folk', value: 'Folk'},
+    { key: 'vocal', value: 'Vocal'},
     { key: 'all', value: 'All'},
   ]
 
@@ -48,7 +49,8 @@ export class InstrumentRangesComponent implements OnInit {
         InstrumentDefinitions.instrumentRanges['woodwind'],
         InstrumentDefinitions.instrumentRanges['brass'],
         InstrumentDefinitions.instrumentRanges['percussion'],
-        InstrumentDefinitions.instrumentRanges['folk']
+        InstrumentDefinitions.instrumentRanges['folk'],
+        InstrumentDefinitions.instrumentRanges['vocal']
       );
     } else {
       this.selectedInstruments = InstrumentDefinitions.instrumentRanges[this.selectedCategory];
