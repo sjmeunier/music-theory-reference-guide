@@ -9,6 +9,21 @@ export abstract class UILists {
         { key: 'B', value: 'B' }
     ];
 
+    public static chromaticNoteList = [
+        { key: 'C', value: 'C' },
+        { key: 'C#', value: 'C#/Db' },
+        { key: 'D', value: 'D' },
+        { key: 'D#', value: 'D#/Eb' },
+        { key: 'E', value: 'E' },
+        { key: 'F', value: 'F' },
+        { key: 'F#', value: 'F#/Gb' },
+        { key: 'G', value: 'G' },
+        { key: 'G#', value: 'G#/Ab' },
+        { key: 'A', value: 'A' },
+        { key: 'A#', value: 'A#/Gb' },
+        { key: 'B', value: 'B' }
+    ];
+
     public static rootAccidentalList = [
         { key: 'b', value: '\u266D' },
         { key: '', value: '\u266E' },

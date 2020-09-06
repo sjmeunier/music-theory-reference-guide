@@ -392,3 +392,16 @@ button:focus {
 .music-definition .definition .name {
     font-weight: bold;
 }
+
+.chord-notes select {
+    margin-right: 10px;
+    padding: 4px 5px;
+    border-radius: 5px;
+}
+
+.chord-results {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

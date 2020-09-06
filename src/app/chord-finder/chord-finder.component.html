@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Chord Finder</h2>
+    <div class="description">
+        Select the notes below to find the chord that the notes make up.
+    </div>
+    <div class="chord-notes">
+        <select id='note1' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+        <select id='note2' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+        <select id='note3' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+        <select id='note4' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+        <select id='note5' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+        <select id='note6' (change)="checkNotes()">
+            <option *ngFor="let item of noteSelectList" [value]="item.key">
+                {{item.value}}
+            </option>
+        </select>
+    </div>
+    <div class="chord-results">
+        <div *ngFor="let result of chordResults" >{{result}}</div>
+    </div>
+</div>

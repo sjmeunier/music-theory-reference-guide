@@ -17,6 +17,7 @@ export class AppComponent {
     { route: '/scales', text: 'Scales'},
     { route: '/chords', text: 'Chords'},
     { route: '/scale-chords', text: 'Scale Chords'},
+    { route: '/chord-finder', text: 'Chord Finder'},
     { route: '/circle-of-fifths', text: 'Circle of Fifths'},
     { route: '/terminology', text: 'Terminology'},
     { route: '/music-notation', text: 'Music Notation'},

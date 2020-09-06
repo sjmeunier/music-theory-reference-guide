@@ -13,6 +13,7 @@ import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
 import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
 import { MusicNotationComponent } from './music-notation/music-notation.component';
+import { ChordFinderComponent } from './chord-finder/chord-finder.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MusicNotationComponent } from './music-notation/music-notation.componen
     ScaleChordsComponent,
     IntervalsComponent,
     PianoComponent,
-    MusicNotationComponent
+    MusicNotationComponent,
+    ChordFinderComponent
   ],
   imports: [
     BrowserModule,

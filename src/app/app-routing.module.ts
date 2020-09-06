@@ -10,6 +10,7 @@ import { ScaleChordsComponent } from './scale-chords/scale-chords.component';
 import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
 import { MusicNotationComponent } from './music-notation/music-notation.component';
+import { ChordFinderComponent } from './chord-finder/chord-finder.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'scale-chords', component: ScaleChordsComponent },
   { path: 'intervals', component: IntervalsComponent },
   { path: 'piano', component: PianoComponent },
-  { path: 'music-notation', component: MusicNotationComponent }
+  { path: 'music-notation', component: MusicNotationComponent },
+  { path: 'chord-finder', component: ChordFinderComponent }
 ];
 
 @NgModule({
