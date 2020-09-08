@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Tunings</h2>
+    <div class="grid">
+        <div class="row">
+            <div class="controls">
+                <ul class="buttonlist">
+                    <li *ngFor="let item of instrumentList" [ngClass]="{'selected': item.key === selectedInstrument}" (click)="selectInstrument(item.key)">{{item.value}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tuning-box">
+        <div class="row" *ngFor="let item of selectedTunings; let index = index" [ngClass]="{'odd': (index % 2) === 1}">
+            <div class="name">{{item.name}}</div>
+            <div class="tuning">{{prettifyAccidentals(item.tuning)}}</div>
+        </div>
+    </div>  
+</div>

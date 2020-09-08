@@ -14,6 +14,7 @@ import { IntervalsComponent } from './intervals/intervals.component';
 import { PianoComponent } from './piano/piano.component';
 import { MusicNotationComponent } from './music-notation/music-notation.component';
 import { ChordFinderComponent } from './chord-finder/chord-finder.component';
+import { TuningsComponent } from './tunings/tunings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChordFinderComponent } from './chord-finder/chord-finder.component';
     IntervalsComponent,
     PianoComponent,
     MusicNotationComponent,
-    ChordFinderComponent
+    ChordFinderComponent,
+    TuningsComponent
   ],
   imports: [
     BrowserModule,

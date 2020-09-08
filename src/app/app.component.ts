@@ -22,6 +22,7 @@ export class AppComponent {
     { route: '/terminology', text: 'Terminology'},
     { route: '/music-notation', text: 'Music Notation'},
     { route: '/instrument-ranges', text: 'Instrument Ranges'},
+    { route: '/tunings', text: 'Tunings'},
     { route: '/piano', text: 'Piano'},
   ]
   public getRoute = function() {

@@ -1,4 +1,4 @@
-import { InstrumentRange} from '.';
+import { InstrumentRange, InstrumentTuning } from '.';
 
 export abstract class InstrumentDefinitions {
     public static instrumentRanges: { [id: string]: InstrumentRange[]; } = {
@@ -82,5 +82,80 @@ export abstract class InstrumentDefinitions {
             { name: 'Baritone (Vocal)', rangeStart: 'G2', rangeEnd: 'G4' },
             { name: 'Bass (Vocal)', rangeStart: 'D2', rangeEnd: 'E4' },
         ]
+    };
+
+    public static instrumentTunings: { [id: string]: InstrumentTuning[]; } = {
+        'violin': [
+            { name: 'Standard', tuning: 'G3  D4  A4  E5'},
+            { name: 'Cajun', tuning: 'F3  C4  G4  D5'},
+            { name: 'Open G', tuning: 'G3  D4  G4  B4'},
+            { name: 'Sawmill', tuning: 'G3  D4  G4  D5'},
+            { name: 'Gee-Dad', tuning: 'G3  D4  A4  D5'},
+            { name: 'Dead Man\'s Tuning', tuning: 'D3  D4  A4  D5'},
+            { name: 'High Bass', tuning: 'A3  D4  A4  E5'},
+            { name: 'Cross Tuning', tuning: 'A3  E4  A4  E5'},
+            { name: 'Black Mountain Rag', tuning: 'A3  E4  A4  C#5'},
+            { name: 'Old Sledge', tuning: 'A3  E4  A4  D5'},
+            { name: 'Glory in the Meeting House', tuning: 'E3  D4  A4  E5'},
+            { name: 'Get up in the Cool', tuning: 'E3  E4  A4  E5'},
+        ],
+        'viola': [
+            { name: 'Standard', tuning: 'C3  G3  D4  A4'},
+        ],
+        'cello': [
+            { name: 'Standard', tuning: 'C2  G2  D3  A3'},
+        ],
+        'double-bass': [
+            { name: 'Standard', tuning: 'E1  A1  D2  G2'},
+            { name: 'Dropped D', tuning: 'D1  A1  D2  G2'},
+            { name: 'Standard D', tuning: 'D1  G1  C2  F2'},
+            { name: 'Dropped D', tuning: 'C1  G1  C2  F2'},
+            { name: 'Standard Eb', tuning: 'Eb1  Ab1  Db2  Gb2'},
+        ],
+        'guitar': [
+            { name: 'Standard', tuning: 'E2  A2  D3  G3  B3  E4'},
+            { name: 'Drop D', tuning: 'D2  A2  D3  G3  B3  E4'},
+            { name: 'Double Drop D', tuning: 'D2  A2  D3  G3  B3  D4'},
+            { name: 'Open G', tuning: 'D2  G2  D3  G3  B3  D4'},
+            { name: 'Open D', tuning: 'D2  A2  D3  F#3  A3  D4'},
+            { name: 'Open E', tuning: 'E2  B2  E3  G#3  B3  E4'},
+            { name: 'Open A', tuning: 'E2  A2  E3  A3  C#3  E4'},
+            { name: 'Open C', tuning: 'C2  G2  C3  G3  C4  E4'},
+            { name: 'Open C6', tuning: 'C2  A2  C3  G3  C4  E4'},
+            { name: 'Modal D', tuning: 'D2  A2  D3  G3  A3  D4'},
+            { name: 'Nick Drake Tuning', tuning: 'C2  G2  C3  F3  C3  E4'},
+        ],
+        'bass-guitar': [
+            { name: 'Standard', tuning: 'E1  A1  D2  G2'},
+            { name: 'Dropped D', tuning: 'D1  A1  D2  G2'},
+            { name: 'Standard D', tuning: 'D1  G1  C2  F2'},
+            { name: 'Dropped D', tuning: 'C1  G1  C2  F2'},
+            { name: 'Standard Eb', tuning: 'Eb1  Ab1  Db2  Gb2'},
+        ],
+        'banjo': [
+            { name: 'Standard (Open G)', tuning: 'G4  D3  G3  B3  D4'},
+            { name: 'Double C', tuning: 'G4  C3  G3  C3  D4'},
+            { name: 'Drop C', tuning: 'G4  C3  G3  B3  D4'},
+            { name: 'D', tuning: 'F#4  D  F#3  A3  D4'},
+            { name: 'G Modal', tuning: 'G4  D3  G3  C3  D4'},
+        ],
+        'soprano-ukelele': [
+            { name: 'Standard (G)', tuning: 'G4  C4  E4  A4'},
+            { name: 'Standard A', tuning: 'A4  D4  F#4  B4'},
+        ],
+        'concert-ukelele': [
+            { name: 'Standard', tuning: 'G4  C4  E4  A4'},
+            { name: 'Low G', tuning: 'G3  C4  E4  A4'},
+        ],
+        'tenor-ukelele': [
+            { name: 'Standard', tuning: 'G4  C4  E4  A4'},
+            { name: 'Low G', tuning: 'G3  C4  E4  A4'},
+            { name: 'Standard', tuning: 'D4  G3  B3  E4'},
+            { name: 'Standard', tuning: 'D3  G3  B3  E4'},
+        ],
+        'baritone-ukelele': [
+            { name: 'Standard', tuning: 'D3  G3  B3  E4'},
+            { name: 'Drop C', tuning: 'C3  G3  B3  E4'},
+        ],
     };
 }

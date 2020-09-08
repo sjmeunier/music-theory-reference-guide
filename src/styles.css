@@ -310,6 +310,44 @@ button:focus {
 }
 
 /*------------------------------------------*/
+/*Tunings*/
+.content .tuning-box {
+    width: 520px;
+    margin: 0px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.content .tuning-box .title {
+    text-align: center;
+    font-size: 135%;
+    font-weight: bold;
+}
+.content .tuning-box .row {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    background: #fdfdfd;
+}
+
+.content .tuning-box .odd {
+    background: #f8f8f8;
+}
+.content .tuning-box .row .name {
+    padding: 5px;
+    width: 300px;
+    font-weight: bold;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.content .tuning-box .row .tuning {
+    padding: 5px;
+    text-align: left;
+}
+
+/*------------------------------------------*/
 /*Piano*/
 .piano {
     width: 588px;
